@@ -1,20 +1,4 @@
-/* 目標
- * 	フィルタの使い方を理解する
- * フィルタ
- * 	説明
- * 		Servlrt/JSP実行前に行う処理
- * 		共通で行う処理を記述する
- * 	書式
- * 		public void doFilter(
-			ServletRequest request, ServletResponse response,
-			FilterChain chain
-		) throws IOException, ServletException {	
-			フィルタで行いたい処理
-		}
 
-		public void init(FilterConfig filterConfig) {}
-		public void destroy() {}
- */
 
 package tool;
 
