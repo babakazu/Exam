@@ -23,7 +23,7 @@ public class InsertAction extends HttpServlet {
 		PrintWriter out=response.getWriter();
 		Page.header(out); // tool/Page.javaのheaderメソッドを実行
 		// 正常な場合の処理
-		try {
+		try { 
 			InitialContext ic=new InitialContext();
 			DataSource ds=(DataSource)ic.lookup(
 				"java:/comp/env/jdbc/gakuseikanri");
