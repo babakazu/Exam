@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -30,6 +29,31 @@
         background-color: #007bff;
         color: white;
         border-radius: 5px 0 0 5px;
+    }
+
+    .container-left ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .container-left li {
+        margin-bottom: 10px;
+    }
+
+    .container-left button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .container-left button:hover {
+        background-color: #0056b3;
     }
 
     .container-right {
@@ -73,7 +97,7 @@
         <div class="container-left">
             <ul>
                 <li><button onclick="location.href='logout.jsp'">ログアウト</button></li>
-                <li><button onclick="location.href='register.jsp'">新規登録</button></li>
+                <li><button onclick="location.href='register.jsp'">登録</button></li>
                 <li><button onclick="location.href='main-menu.jsp'">メインメニュー</button></li>
                 <li><button onclick="location.href='record-grade.jsp'">成績登録</button></li>
                 <li><button onclick="location.href='view-grade.jsp'">成績参照</button></li>
