@@ -1,10 +1,12 @@
+
+Copy code
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>学生登録</title>
+<title>学生変更</title>
 <style>
     body {
         font-family: Arial, sans-serif;
@@ -97,7 +99,8 @@
         <div class="container-left">
             <ul>
                 <li><button onclick="location.href='logout.jsp'">ログアウト</button></li>
-                <li><button onclick="location.href='register.jsp'">登録</button></li>
+                <li><button onclick="location.href='student_list.jsp'">学生一覧</button></li>
+                <li><button onclick="location.href='student_insert.jsp'">学生登録</button></li>
                 <li><button onclick="location.href='main-menu.jsp'">メインメニュー</button></li>
                 <li><button onclick="location.href='record-grade.jsp'">成績登録</button></li>
                 <li><button onclick="location.href='view-grade.jsp'">成績参照</button></li>
@@ -105,17 +108,27 @@
             </ul>
         </div>
         <div class="container-right">
-            <h2>学生登録フォーム</h2>
-            <form action="register-student-process.jsp" method="post">
+            <h2>学生変更フォーム</h2>
+            <form action="edit-student-process.jsp" method="post">
+                <!-- 変更前の学生情報を表示 -->
                 <label for="enrollmentYear">入学年度:</label>
-                <input type="number" id="enrollmentYear" name="enrollmentYear" required><br>
+                <input type="number" id="enrollmentYear" name="enrollmentYear" value="入学年度を取得して設定" required><br>
                 <label for="studentNumber">学生番号:</label>
-                <input type="text" id="studentNumber" name="studentNumber" required><br>
+                <input type="text" id="studentNumber" name="studentNumber" value="学生番号を取得して設定" required><br>
                 <label for="name">氏名:</label>
-                <input type="text" id="name" name="name" required><br>
+                <input type="text" id="name" name="name" value="氏名を取得して設定" required><br>
                 <label for="class">クラス:</label>
-                <input type="text" id="class" name="class" required><br>
-                <input type="submit" value="登録">
+                <input type="text" id="class" name="class" value="クラスを取得して設定" required><br>
+                <!-- 編集内容を入力するためのフォーム -->
+                <label for="newEnrollmentYear">新しい入学年度:</label>
+                <input type="number" id="newEnrollmentYear" name="newEnrollmentYear" required><br>
+                <label for="newStudentNumber">新しい学生番号:</label>
+                <input type="text" id="newStudentNumber" name="newStudentNumber" required><br>
+                <label for="newName">新しい氏名:</label>
+                <input type="text" id="newName" name="newName" required><br>
+                <label for="newClass">新しいクラス:</label>
+                <input type="text" id="newClass" name="newClass" required><br>
+                <input type="submit" value="変更">
                 <input type="button" value="戻る" onclick="location.href='student-list.jsp'">
             </form>
         </div>
