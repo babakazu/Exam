@@ -2,6 +2,6 @@
 <%@include file="../header.html" %>
 <%@include file="login-in.jsp" %>
 
-寿司オンラインショッピングにようこそ！
+得点管理システム
 
 <%@include file="../footer.html" %>
