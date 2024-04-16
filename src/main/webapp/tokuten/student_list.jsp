@@ -77,10 +77,10 @@
     <div class="container">
         <div class="container-left">
             <ul>
-                <li><button onclick="location.href='logout.jsp'">ログアウト</button></li>
+                <li><button onclick="location.href='../login/logout-in.jsp'">ログアウト</button></li>
                 <li><button onclick="location.href='student_insert.jsp'">学生登録</button></li>
                 <li><button onclick="location.href='student_update.jsp'">学生変更</button></li>
-                <li><button onclick="location.href='main-menu.jsp'">メインメニュー</button></li>
+                <li><button onclick="location.href='../login/menu.jsp'">メインメニュー</button></li>
                 <li><button onclick="location.href='record-grade.jsp'">成績登録</button></li>
                 <li><button onclick="location.href='view-grade.jsp'">成績参照</button></li>
                 <li><button onclick="location.href='manage-subject.jsp'">科目管理</button></li>
