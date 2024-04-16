@@ -1,5 +1,5 @@
 <%@page contentType="text/html; charset=UTF-8" %>
-<%@include file="../header.html" %>
+
 <link rel="stylesheet" type="text/css" href="../css/style.css">
 
 <h2>メニュー</h2>
@@ -12,4 +12,4 @@
     <a href="logout-in.jsp">ログアウト</a>
 </div>
 
-<%@include file="../footer.html" %>
+
