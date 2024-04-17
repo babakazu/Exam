@@ -1,27 +1,44 @@
 package main;
 
-import java.util.List;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
-import bean.Student;
-import dao.StudentDAO;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
-import tool.Action;
+public class student_list {
+    public static void main(String[] args) {
+        // データベースのURL、ユーザー名、パスワードを指定
+        String url = "jdbc:mysql://localhost:3306/your_database_name";
+        String username = "your_username";
+        String password = "your_password";
 
-public class StudentListAction extends Action {
-	public String execute(
-		HttpServletRequest request, HttpServletResponse response
-	) throws Exception {
+        try (Connection conn = DriverManager.getConnection(url, username, password)) {
+            if (conn != null) {
+                System.out.println("Connected to the database!");
 
-		HttpSession session=request.getSession(); // セッションの開始
+                // ステートメントを作成してクエリを実行
+                Statement stmt = conn.createStatement();
+                ResultSet rs = stmt.executeQuery("SELECT * FROM students");
 
-		StudentDAO dao=new StudentDAO();
-		List<Student> list=dao.search(""); // 学生一覧を取得 
+                // 結果セットから学生情報を取得して表示
+                while (rs.next()) {
+                    int id = rs.getInt("id");
+                    String name = rs.getString("name");
+                    int age = rs.getInt("age");
+                    String major = rs.getString("major");
+                    System.out.println("ID: " + id + ", Name: " + name + ", Age: " + age + ", Major: " + major);
+                }
 
-		session.setAttribute("list", list); // 学生一覧をlistという名前で保存
-
-		return "studentList.jsp"; // studentList.jspに遷移
-
-	}
+                // リソースをクローズ
+                rs.close();
+                stmt.close();
+            }
+        } catch (SQLException e) {
+            // SQLエラーが発生した場合の処理
+            System.out.println("SQLException: " + e.getMessage());
+            System.out.println("SQLState: " + e.getSQLState());
+            System.out.println("VendorError: " + e.getErrorCode());
+        }
+    }
 }

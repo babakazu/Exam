@@ -15,7 +15,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import tool.Page;
 
 @WebServlet(urlPatterns={"/tokuten/insert"}) // urlにchapter14/insertを指定
-public class InsertAction extends HttpServlet {
+public class student_insert extends HttpServlet {
 
 	public void doPost (
 		HttpServletRequest request, HttpServletResponse response
