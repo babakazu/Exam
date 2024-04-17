@@ -1,19 +1,22 @@
-/* メニューリンクを横に並べる */
+/* メニュー項目を中央に配置 */
 .menu-links {
-    display: flex;
-    justify-content: space-between;
+    text-align: center;
 }
 
-/* メニューリンクのスタイル */
+/* メニュー項目を横並びに配置 */
 .menu-links a {
-    padding: 10px 20px;
-    background-color: #3498db;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
+    display: inline-block; /* インラインブロック要素として表示 */
+    margin: 10px; /* マージンを追加して項目を区切る */
+    padding: 8px 16px; /* テキスト周りの余白を設定 */
+    background-color: #4CAF50; /* 背景色 */
+    color: white; /* テキスト色 */
+    text-decoration: none; /* 下線を削除 */
+    border: none; /* ボーダーを削除 */
+    border-radius: 4px; /* 角丸にする */
+    
 }
 
-/* メニューリンクのホバー時のスタイル */
+/* マウスホバー時のスタイル */
 .menu-links a:hover {
-    background-color: #2980b9;
+    background-color: #45a049; /* ホバー時の背景色 */
 }
