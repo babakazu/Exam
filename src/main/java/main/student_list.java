@@ -17,7 +17,7 @@ public class student_list {
             if (conn != null) {
                 System.out.println("Connected to the database!");
 
-                // ステートメントを作成してクエリを実行
+                // ステートメントを作成してクエリを実行 
                 Statement stmt = conn.createStatement();
                 ResultSet rs = stmt.executeQuery("SELECT * FROM students");  
 
