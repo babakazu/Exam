@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class student_list {
+public class student_list { 
     public static void main(String[] args) {
         // データベースのURL、ユーザー名、パスワードを指定
         String url = "jdbc:mysql://localhost:3306/your_database_name"; 
