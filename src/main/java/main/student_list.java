@@ -21,7 +21,7 @@ public class student_list {
                 Statement stmt = conn.createStatement();
                 ResultSet rs = stmt.executeQuery("SELECT * FROM students");  
 
-                // 結果セットから学生情報を取得して表示
+                // 結果セットから学生情報を取得して表示 
                 while (rs.next()) {
                     int id = rs.getInt("id");
                     String name = rs.getString("name");
