@@ -15,11 +15,11 @@ public class student_list {
 
         try (Connection conn = DriverManager.getConnection(url, username, password)) {
             if (conn != null) {
-                System.out.println("Connected to the database!"); 
+                System.out.println("Connected to the database!");
 
                 // ステートメントを作成してクエリを実行
                 Statement stmt = conn.createStatement();
-                ResultSet rs = stmt.executeQuery("SELECT * FROM students");
+                ResultSet rs = stmt.executeQuery("SELECT * FROM students");  
 
                 // 結果セットから学生情報を取得して表示
                 while (rs.next()) {
