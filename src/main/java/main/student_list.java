@@ -15,7 +15,7 @@ public class student_list {
 
         try (Connection conn = DriverManager.getConnection(url, username, password)) {
             if (conn != null) {
-                System.out.println("Connected to the database!");
+                System.out.println("Connected to the database!"); 
 
                 // ステートメントを作成してクエリを実行
                 Statement stmt = conn.createStatement();
