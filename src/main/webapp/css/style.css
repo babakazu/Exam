@@ -20,3 +20,87 @@
 .menu-links a:hover {
     background-color: #45a049; /* ホバー時の背景色 */
 }
+
+/* メニュー項目を枠線で囲む */
+.menu-links {
+    text-align: center;
+    border: 1px solid #ccc; /* 枠線を追加 */
+    padding: 10px; /* 枠線とメニュー項目の間に余白を追加 */
+}
+
+/* "メニュー" の文字を上側の中央に配置 */
+h2 {
+    text-align: center; /* 中央揃え */
+    margin-top: 50px; /* 上側の余白 */
+}
+
+/* 全体のページスタイル */
+body {
+    font-family: Arial, sans-serif; /* フォントファミリーの指定 */
+    margin: 0; /* マージンをリセット */
+    padding: 0; /* パディングをリセット */
+    background-color: #f4f4f4; /* 背景色 */
+}
+
+/* コンテナのスタイル */
+.container {
+    display: flex; /* フレックスコンテナ */
+    max-width: 800px; /* 最大幅 */
+    margin: 20px auto; /* 上下左右のマージンを自動調整 */
+    padding: 20px; /* 内側のパディング */
+    background-color: #fff; /* 背景色 */
+    border-radius: 5px; /* 角丸 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 影の設定 */
+}
+
+/* 左側コンテンツのスタイル */
+.container-left {
+    flex: 1; /* フレックスアイテムの割合 */
+    padding: 20px; /* 内側のパディング */
+    background-color: #007bff; /* 背景色 */
+    color: white; /* テキスト色 */
+    border-radius: 5px 0 0 5px; /* 角丸 */
+}
+
+/* 左側メニューリストのスタイル */
+.container-left ul {
+    list-style-type: none; /* リストのスタイルをなしに */
+    padding: 0; /* 内側のパディングをリセット */
+}
+
+.container-left li {
+    margin-bottom: 10px; /* 各項目の下側マージン */
+}
+
+.container-left button {
+    display: block; /* ブロック要素として表示 */
+    width: 100%; /* 幅100% */
+    padding: 10px; /* 内側のパディング */
+    text-align: center; /* 中央揃え */
+    background-color: #007bff; /* 背景色 */
+    color: white; /* テキスト色 */
+    border: none; /* ボーダーなし */
+    border-radius: 5px; /* 角丸 */
+    cursor: pointer; /* ポインター */
+}
+
+.container-left button:hover {
+    background-color: #0056b3; /* ホバー時の背景色 */
+}
+
+/* 右側コンテンツのスタイル */
+.container-right {
+    flex: 3; /* フレックスアイテムの割合 */
+    padding: 20px; /* 内側のパディング */
+}
+
+/* ヘッダーのスタイル */
+header {
+    background-color: #007bff; /* 背景色 */
+    color: white; /* テキスト色 */
+    padding: 10px 0; /* 上下のパディング */
+    text-align: center; /* 中央揃え */
+    border-radius: 5px 5px 0 0; /* 角丸 */
+}
+
+

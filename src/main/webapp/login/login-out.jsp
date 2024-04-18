@@ -9,6 +9,7 @@
     Teacher teacher = (Teacher) session.getAttribute("teacher");
 %>
 
+<link rel="stylesheet" type="text/css" href="../css/login-style.css">
 <!DOCTYPE html>
 <html lang="ja">
 <head>
