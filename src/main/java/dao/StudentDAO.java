@@ -6,26 +6,27 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import bean.Teacher;
+import bean.Student;
 
 public class StudentDAO extends DAO {
-    public List<Teacher> search(String keyword) throws Exception {
-        List<Teacher> list = new ArrayList<>();
+    public List<Student> search(String keyword) throws Exception {
+        List<Student> list = new ArrayList<>();
 
         Connection con = getConnection();
 
         PreparedStatement st = con.prepareStatement(
-                "SELECT * FROM teacher WHERE name LIKE ?");
+                "SELECT * FROM student WHERE name LIKE ?");
         st.setString(1, "%" + keyword + "%");
         ResultSet rs = st.executeQuery();
 
         while (rs.next()) {
-            Teacher teacher = new Teacher();
-            teacher.setId(rs.getString("id"));
-            teacher.setPassword(rs.getString("password"));
-            teacher.setName(rs.getString("name"));
-            teacher.setSchoolCd(rs.getString("schoolCd"));
-            list.add(teacher);
+            Student student = new Student();
+            student.setEnrollmentYear(rs.getInt("enrollmentYear"));
+            student.setStudentNumber(rs.getInt("studentNumber"));
+            student.setName(rs.getString("name"));
+            student.setClassName(rs.getString("className"));
+            student.setEnrolled(rs.getBoolean("isEnrolled"));
+            list.add(student);
         }
 
         st.close();
@@ -34,14 +35,15 @@ public class StudentDAO extends DAO {
         return list;
     }
 
-    public int insert(Teacher teacher) throws Exception {
+    public int insert(Student student) throws Exception {
         Connection con = getConnection();
         PreparedStatement st = con.prepareStatement(
-                "INSERT INTO teacher (id, password, name, schoolCd) VALUES (?, ?, ?, ?)");
-        st.setString(1, teacher.getId());
-        st.setString(2, teacher.getPassword());
-        st.setString(3, teacher.getName());
-        st.setString(4, teacher.getSchoolCd());
+                "INSERT INTO student (enrollmentYear, studentNumber, name, className, isEnrolled) VALUES (?, ?, ?, ?, ?)");
+        st.setInt(1, student.getEnrollmentYear());
+        st.setInt(2, student.getStudentNumber());
+        st.setString(3, student.getName());
+        st.setString(4, student.getClassName());
+        st.setBoolean(5, student.isEnrolled());
         int result = st.executeUpdate();
         st.close();
         con.close();
