@@ -103,4 +103,12 @@ header {
     border-radius: 5px 5px 0 0; /* 角丸 */
 }
 
+body {
+    background-image: url('../image/kuukan36.png'); /* 背景画像のURL */
+    background-size: cover; /* 背景に広げる */
+    background-position: center; /* 画像の配置 */
+    background-repeat: no-repeat; /* 繰り返しを無効 */
+    height: 100vh; /* 画面の高さに設定 */
+}
+
 
