@@ -6,13 +6,12 @@
 <div class="container">
     <div class="container-left">
         <ul>
-            <li><button onclick="location.href='../login/menu.jsp'">メインメニュー</button></li>
-            <li><button onclick="location.href='student_insert.jsp'">学生一覧</button></li>
-            <li><button onclick="location.href='student_update.jsp'">学生変更</button></li>
-            <li><button onclick="location.href='../grades/grades_insert.jsp'">成績登録</button></li>
-            <li><button onclick="location.href='../grades/grades_list.jsp'">成績参照</button></li>
-            <li><button onclick="location.href='manage-subject.jsp'">科目管理</button></li>
-            <li><button onclick="location.href='../login/logout-in.jsp'">ログアウト</button></li>
+    <a href="student_list.jsp">学生一覧</a>
+    <a href="student_update.jsp">学生変更</a>
+    <a href="../grades/grades_insert.jsp">成績登録</a>
+    <a href="../grades/grades_list.jsp">成績参照</a>
+    <a href="subject-management.jsp">科目管理</a>
+    <a href="../login/login-out.jsp">ログアウト</a>
         </ul>
     </div>
     <div class="container-right">

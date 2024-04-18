@@ -4,12 +4,12 @@
 <h2>学生管理</h2>
 
 <div class="menu-links">
-    <a href="student-registration.jsp">学生登録</a>
-    <a href="student-update.jsp">学生変更</a>
-    <a href="grade-registration.jsp">成績登録</a>
-    <a href="grade-reference.jsp">成績参照</a>
+    <a href="student_list.jsp">学生一覧</a>
+    <a href="student_insert.jsp">学生登録</a>
+    <a href="../grades/grades_insert.jsp">成績登録</a>
+    <a href="../grades/grades_list.jsp">成績参照</a>
     <a href="subject-management.jsp">科目管理</a>
-    <a href="logout.jsp">ログアウト</a>
+    <a href="../login/login-out.jsp">ログアウト</a>
 </div>
 
     <div class="container-right">
