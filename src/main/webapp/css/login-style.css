@@ -1,0 +1,45 @@
+/* ページ全体のスタイル */
+body {
+    font-family: Arial, sans-serif; /* フォントファミリーの指定 */
+    margin: 0; /* マージンをリセット */
+    padding: 0; /* パディングをリセット */
+    display: flex; /* フレックスボックスを使って要素を中央に配置 */
+    justify-content: center; /* 横方向の中央揃え */
+    align-items: center; /* 縦方向の中央揃え */
+    height: 100vh; /* ビューポートの高さいっぱいに */
+    background-color: #f4f4f4; /* 背景色 */
+}
+
+/* フォームのスタイル */
+form {
+    padding: 20px; /* 内側のパディング */
+    background: #fff; /* 背景色 */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* 影の設定 */
+    border-radius: 5px; /* 角丸 */
+}
+
+/* テキスト入力フィールドのスタイル */
+input[type="text"], input[type="password"] {
+    width: 100%; /* 幅100% */
+    padding: 10px; /* 内側のパディング */
+    margin: 10px 0; /* 上下のマージン */
+    box-sizing: border-box; /* ボックスサイジングを border-box に */
+    border: 1px solid #ccc; /* ボーダーのスタイル */
+    border-radius: 4px; /* 角丸 */
+}
+
+/* サブミットボタンのスタイル */
+input[type="submit"] {
+    width: 100%; /* 幅100% */
+    padding: 10px; /* 内側のパディング */
+    background-color: #007bff; /* 背景色 */
+    color: white; /* テキスト色 */
+    border: none; /* ボーダーなし */
+    border-radius: 5px; /* 角丸 */
+    cursor: pointer; /* ポインター */
+}
+
+/* ホバー時のスタイル */
+input[type="submit"]:hover {
+    background-color: #0056b3; /* ホバー時の背景色 */
+}
