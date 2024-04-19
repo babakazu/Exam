@@ -3,7 +3,6 @@ package dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,12 +10,14 @@ import bean.Student;
 
 public class StudentDAO extends DAO {
 
-    public List<Student> getStudentList() {
-        List<Student> studentList = new ArrayList<>();
+    public List<Student> search(String keyword) {
+        List<Student> list = new ArrayList<>();
 
         try (Connection connection = getConnection();
-             PreparedStatement statement = connection.prepareStatement("SELECT * FROM student");
-             ResultSet resultSet = statement.executeQuery()) {
+             PreparedStatement statement = connection.prepareStatement("SELECT * FROM student WHERE name LIKE ?");
+        ) {
+            statement.setString(1, "%" + keyword + "%");
+            ResultSet resultSet = statement.executeQuery();
 
             while (resultSet.next()) {
                 Student student = new Student();
@@ -26,14 +27,12 @@ public class StudentDAO extends DAO {
                 student.setClass_num(resultSet.getString("class_num"));
                 student.setIs_attend(resultSet.getString("is_attend"));
                 student.setSchool_cd(resultSet.getString("school_cd"));
-                studentList.add(student);
+                list.add(student);
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        return studentList;
+        return list;
     }
 }

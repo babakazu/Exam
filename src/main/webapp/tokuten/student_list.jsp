@@ -1,12 +1,5 @@
 <%@page contentType="text/html; charset=UTF-8" %>
 <%@page import="java.util.List"%>
-<%@page import="bean.Student"%>
-<%@page import="dao.StudentListDAO"%>
-<%@page import="dao.DAO"%>
-<%@page import="java.sql.Connection"%>
-<%@page import="java.sql.PreparedStatement"%>
-<%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.SQLException"%>
 
 <link rel="stylesheet" type="text/css" href="../css/style.css">
 
@@ -32,18 +25,4 @@
         <th>出席状況</th>
         <th>学校コード</th>
     </tr>
-    <% 
-        StudentListDAO studentListDAO = new StudentListDAO();
-        List<Student> studentList = studentListDAO.getStudentList();
-        for (Student student : studentList) {
-    %>
-    <tr>
-        <td><%= student.getNo() %></td>
-        <td><%= student.getName() %></td>
-        <td><%= student.getEnt_year() %></td>
-        <td><%= student.getClass_num() %></td>
-        <td><%= student.getIs_attend() %></td>
-        <td><%= student.getSchool_cd() %></td>
-    </tr>
-    <% } %>
 </table>
