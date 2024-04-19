@@ -1,26 +1,35 @@
-package subject ;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+package subject;
 
+import java.io.IOException;
+
+import bean.Subject;
 import dao.SubjectDAO;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
-public class subject_insert {
-    public void insertSubject(String schoolCode, String code, String name) {
-        SubjectDAO dao = new SubjectDAO(); // SubjectDAO クラスのインスタンスを作成
-        Connection connection = null;
+@WebServlet("/subject_insert")
+public class subject_insert extends HttpServlet {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String schoolCode = request.getParameter("schoolCode");
+        String code = request.getParameter("code");
+        String name = request.getParameter("name");
+        
+        // SubjectDAOのインスタンスを生成
+        SubjectDAO subjectDAO = new SubjectDAO();
+
+        // 新しい科目のインスタンスを生成
+        Subject subject = new Subject(schoolCode, code, name);
         try {
-            connection = dao.getConnection(); // ここでインスタンス化された SubjectDAO を使用する
-            PreparedStatement pstmt = connection.prepareStatement("INSERT INTO SUBJECT_TABLE (SCHOOL_CD, CD, NAME) VALUES (?, ?, ?)");
-            pstmt.setString(1, schoolCode);
-            pstmt.setString(2, code);
-            pstmt.setString(3, name);
-            pstmt.executeUpdate();
-            pstmt.close();
-        } catch (SQLException e) {
+            // 科目をデータベースに挿入
+            subjectDAO.insertSubject(subject);
+            // 科目一覧ページにリダイレクト
+            response.sendRedirect("subject_list.jsp");
+        } catch (Exception e) {
             e.printStackTrace();
-        } finally {
-            dao.closeConnection(connection);
+            // エラー処理を追加する
         }
     }
 }

@@ -21,7 +21,7 @@ public class student_list extends Action {
 
         session.setAttribute("list", list); // 学生一覧をlistという名前で保存
 
-        return "studentList.jsp"; // studentList.jspに遷移
+        return "studentlist.jsp"; // studentList.jspに遷移
 
     }
 }

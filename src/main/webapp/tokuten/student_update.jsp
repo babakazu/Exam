@@ -1,4 +1,4 @@
-<%@page contentType="text/html; charset=UTF-8" %>
+ <%@page contentType="text/html; charset=UTF-8" %>
 
 
 <h2>学生管理</h2>
@@ -37,4 +37,4 @@
             <input type="button" value="戻る" onclick="location.href='student-list.jsp'">
         </form>
     </div>
-</div
+</div> 

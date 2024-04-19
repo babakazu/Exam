@@ -1,3 +1,4 @@
+package main ;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,7 +16,7 @@ public class EditStudentProcessServlet extends HttpServlet {
         String newStudentNumber = request.getParameter("newStudentNumber");
         String newName = request.getParameter("newName");
         String newClass = request.getParameter("newClass");
-
+s
         // 入学年度を整数に変換
         int newEnrollmentYear = Integer.parseInt(newEnrollmentYearStr);
 

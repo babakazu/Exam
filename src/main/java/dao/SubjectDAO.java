@@ -1,35 +1,73 @@
-package dao ;
-import java.sql.Connection;
-import java.sql.SQLException;
+package dao;
 
-import javax.naming.Context;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.naming.InitialContext;
-import javax.naming.NamingException;
 import javax.sql.DataSource;
 
-public class SubjectDAO {
-    private DataSource dataSource;
+import bean.Subject;
 
-    public SubjectDAO() {
-        try {
-            Context context = new InitialContext();
-            dataSource = (DataSource) context.lookup("java:comp/env/jdbc/myDB");
-        } catch (NamingException e) {
-            e.printStackTrace();
+public class SubjectDAO {
+    private DataSource ds;
+
+    public SubjectDAO() throws Exception {
+        InitialContext ic = new InitialContext();
+        ds = (DataSource) ic.lookup("java:/comp/env/jdbc/kouka");
+    }
+
+    public List<Subject> getAllSubjects() throws Exception {
+        List<Subject> subjects = new ArrayList<>();
+        String query = "SELECT SCHOOL_CD, CD, NAME FROM SUBJECT";
+
+        try (Connection conn = ds.getConnection();
+             PreparedStatement ps = conn.prepareStatement(query);
+             ResultSet rs = ps.executeQuery()) {
+
+            while (rs.next()) {
+                String schoolCode = rs.getString("SCHOOL_CD");
+                String code = rs.getString("CD");
+                String name = rs.getString("NAME");
+                Subject subject = new Subject(schoolCode, code, name);
+                subjects.add(subject);
+            }
+        }
+
+        return subjects;
+    }
+
+    public void insertSubject(Subject subject) throws Exception {
+        String query = "INSERT INTO SUBJECT (SCHOOL_CD, CD, NAME) VALUES (?, ?, ?)";
+        try (Connection conn = ds.getConnection();
+             PreparedStatement ps = conn.prepareStatement(query)) {
+            ps.setString(1, subject.getSchoolCode());
+            ps.setString(2, subject.getCode());
+            ps.setString(3, subject.getName());
+            ps.executeUpdate();
         }
     }
 
-    public Connection getConnection() throws SQLException {
-        return dataSource.getConnection();
+    public void updateSubject(Subject subject) throws Exception {
+        String query = "UPDATE SUBJECT SET NAME = ? WHERE SCHOOL_CD = ? AND CD = ?";
+        try (Connection conn = ds.getConnection();
+             PreparedStatement ps = conn.prepareStatement(query)) {
+            ps.setString(1, subject.getName());
+            ps.setString(2, subject.getSchoolCode());
+            ps.setString(3, subject.getCode());
+            ps.executeUpdate();
+        }
     }
 
-    public void closeConnection(Connection connection) {
-        try {
-            if (connection != null) {
-                connection.close();
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
+    public void deleteSubject(String schoolCode, String code) throws Exception {
+        String query = "DELETE FROM SUBJECT WHERE SCHOOL_CD = ? AND CD = ?";
+        try (Connection conn = ds.getConnection();
+             PreparedStatement ps = conn.prepareStatement(query)) {
+            ps.setString(1, schoolCode);
+            ps.setString(2, code);
+            ps.executeUpdate();
         }
     }
 }

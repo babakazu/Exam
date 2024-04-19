@@ -1,3 +1,6 @@
+<%@ page import="java.util.List" %>
+<%@ page import="bean.Subject" %>
+<%@ page import="dao.SubjectDAO" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -10,10 +13,22 @@
     <table border="1">
         <tr>
             <th>School Code</th>
-            <th>Subject Code</th>
-            <th>Subject Name</th>
+            <th>Code</th>
+            <th>Name</th>
         </tr>
-        <%-- Display subject list here --%>
+        <%
+            SubjectDAO subjectDAO = new SubjectDAO();
+            List<Subject> subjects = subjectDAO.getAllSubjects();
+            for (Subject subject : subjects) {
+        %>
+            <tr>
+                <td><%= subject.getSchoolCode() %></td>
+                <td><%= subject.getCode() %></td>
+                <td><%= subject.getName() %></td>
+            </tr>
+        <%
+            }
+        %>
     </table>
 </body>
 </html>

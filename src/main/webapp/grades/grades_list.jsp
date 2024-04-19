@@ -1,4 +1,4 @@
-<%@page contentType="text/html; charset=UTF-8" %>
+ <%@page contentType="text/html; charset=UTF-8" %>
 <link rel="stylesheet" type="text/css" href="../css/style.css">
 
 <h2>成績管理</h2>
@@ -29,4 +29,3 @@
         <!-- 検索結果のテーブルなどを表示 -->
     </div>
 </div>
-
