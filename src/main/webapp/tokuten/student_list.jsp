@@ -24,5 +24,11 @@
         <th>クラス番号</th>
         <th>出席状況</th>
         <th>学校コード</th>
+        
+        <c:forEach var="s" items="${list}">
+		<tr>
+			<th>${student.no}</th><th>${student.name}</th><th>${student.entyear}</th><th>${student.class_num}</th><th>${student.is_attend}</th><th>${student.school_cd}</th><br>
+		</tr>
+		</c:forEach>
     </tr>
 </table>
