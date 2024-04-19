@@ -1,5 +1,10 @@
+
  <%@page contentType="text/html; charset=UTF-8" %>
 <link rel="stylesheet" type="text/css" href="../css/style.css">
+
+<%@page contentType="text/html; charset=UTF-8" %>
+
+
 
 <h2>成績管理</h2>
 
@@ -17,7 +22,7 @@
         <form action="search-grade.jsp" method="get">
             <label for="enrollmentYear">入学年度:</label>
             <input type="number" id="enrollmentYear" name="enrollmentYear"><br>
-            <label for="className">クラス:</label>
+            <label for="className">クラス:</label>/
             <input type="text" id="className" name="className"><br>
             <label for="subject">科目:</label>
             <input type="text" id="subject" name="subject"><br>

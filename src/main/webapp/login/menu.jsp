@@ -1,5 +1,5 @@
 <%@page contentType="text/html; charset=UTF-8" %>
-
+<%@ include file="../header.jsp" %>
 <link rel="stylesheet" type="text/css" href="../css/style.css">
 
 <h2>メニュー</h2>
@@ -12,4 +12,9 @@
     <a href="logout-in.jsp">ログアウト</a>
 </div>
 
-
+<div class="video-container">
+    <video width="60%" controls>
+        <source src="../image/syoukai.mp4" type="video/mp4">
+        お使いのブラウザはビデオタグをサポートしていません。
+    </video>
+</div>

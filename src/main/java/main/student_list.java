@@ -2,7 +2,7 @@ package main;
 
 import java.util.List;
 
-import bean.Teacher;
+import bean.Student;
 import dao.StudentDAO;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -17,7 +17,7 @@ public class student_list extends Action {
         HttpSession session = request.getSession(); // セッションの開始
 
         StudentDAO dao = new StudentDAO();
-        List<Teacher> list = dao.search(""); // 学生一覧を取得 
+        List<Student> list = dao.search(""); // 学生一覧を取得 
 
         session.setAttribute("list", list); // 学生一覧をlistという名前で保存
 

@@ -1,5 +1,7 @@
 <%@page contentType="text/html; charset=UTF-8" %>
-<link rel="stylesheet" type="text/css" href="../css/style.css">
+<%@page import="java.util.List"%>
+<%@ include file="../header.jsp" %>
+
 
 <h2>学生管理</h2>
 
@@ -12,5 +14,22 @@
     <a href="../login/login-out.jsp">ログアウト</a>
 </div>
 
-
 <h3>学生一覧</h3>
+
+<table border="1">
+    <tr>
+        <th>学籍番号</th>
+        <th>名前</th>
+        <th>入学年度</th>
+        <th>クラス番号</th>
+        <th>出席状況</th>
+        <th>学校コード</th>
+        
+        <c:forEach var="s" items="${list}">
+		<tr>
+			<th>${student.no}</th><th>${student.name}</th><th>${student.entyear}</th><th>${student.class_num}</th><th>${student.is_attend}</th><th>${student.school_cd}</th><br>
+		</tr>
+		</c:forEach>
+    </tr>
+</table>
+<%@include file="../footer.jsp" %>
