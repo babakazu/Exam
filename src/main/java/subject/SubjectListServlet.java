@@ -1,9 +1,18 @@
-import java.io.*;
-import java.util.List;
-import javax.servlet.*;
-import javax.servlet.http.*;
-import java.sql.*;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.List;
+
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 public class SubjectListServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -39,7 +48,7 @@ public class SubjectListServlet extends HttpServlet {
         } catch (SQLException e) {
             out.println("データベースの操作中にエラーが発生しました：" + e.getMessage());
             return;
-        } finally {
+        } finally { 
             try {
                 if (rs != null) rs.close();
                 if (stmt != null) stmt.close();

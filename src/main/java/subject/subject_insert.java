@@ -16,7 +16,7 @@ public class subject_insert {
             pstmt.setString(2, code);
             pstmt.setString(3, name);
             pstmt.executeUpdate();
-            pstmt.close();
+            pstmt.close(); 
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {

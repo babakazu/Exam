@@ -18,7 +18,7 @@ public class subject_list {
                 System.out.println("Subject Code: " + rs.getString("CD"));
                 System.out.println("Subject Name: " + rs.getString("NAME"));
                 System.out.println("------------------------");
-            }
+            } 
             rs.close();
             stmt.close();
             dao.closeConnection(connection);

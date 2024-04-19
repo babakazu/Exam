@@ -14,7 +14,7 @@ public class subject_delete {
             connection = dao.getConnection(); // ここでインスタンス化された SubjectDAO を使用する
             PreparedStatement pstmt = connection.prepareStatement("DELETE FROM SUBJECT_TABLE WHERE CD = ?");
             pstmt.setString(1, code);
-            pstmt.executeUpdate();
+            pstmt.executeUpdate(); 
             pstmt.close();
         } catch (SQLException e) {
             e.printStackTrace();
