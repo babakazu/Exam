@@ -15,5 +15,9 @@
         </tr>
         <%-- Display subject list here --%>
     </table>
+    <br>
+    <a href="subject_insert.jsp">Insert Subject</a>
+    <a href="subject_delete.jsp">Delete Subject</a>
+    <a href="subject_update.jsp">Update Subject</a>
 </body>
 </html>

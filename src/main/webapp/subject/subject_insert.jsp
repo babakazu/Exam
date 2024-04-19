@@ -13,5 +13,9 @@
         Subject Name: <input type="text" name="name"><br>
         <input type="submit" value="Insert">
     </form>
+    <br>
+    <a href="subject_list.jsp">Subject List</a>
+    <a href="subject_delete.jsp">Delete Subject</a>
+    <a href="subject_update.jsp">Update Subject</a>
 </body>
 </html>

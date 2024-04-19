@@ -111,4 +111,7 @@ body {
     height: 100vh; /* 画面の高さに設定 */
 }
 
-
+video-container {
+    text-align: center; /* 動画を中央寄せ */
+    margin-top: 20px; /* メニューとの間隔 */
+}

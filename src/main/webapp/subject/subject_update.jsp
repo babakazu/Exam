@@ -12,5 +12,9 @@
         New Subject Name: <input type="text" name="newName"><br>
         <input type="submit" value="Update">
     </form>
+    <br>
+    <a href="subject_list.jsp">Subject List</a>
+    <a href="subject_insert.jsp">Insert Subject</a>
+    <a href="subject_delete.jsp">Delete Subject</a>
 </body>
 </html>

@@ -43,3 +43,45 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: #0056b3; /* ホバー時の背景色 */
 }
+
+/* ログインボタンのスタイル */
+input[type="submit"] {
+    /* 既存のスタイル */
+    width: 100%;
+    padding: 10px;
+    background-color: transparent; /* 背景色を透明に設定 */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    /* アニメーション */
+    animation: rainbow 2s infinite; /* アニメーション名、時間、繰り返し設定 */
+}
+
+/* ログインボタンのホバー時のスタイル */
+input[type="submit"]:hover {
+    animation: none; /* ホバー時にアニメーションを停止 */
+    background-color: transparent; /* ホバー時の背景色を透明に設定 */
+}
+
+/* レインボーアニメーション */
+@keyframes rainbow {
+    0% { background-color: red; } /* 0%の位置では赤色 */
+    14% { background-color: orange; } /* 14%の位置ではオレンジ色 */
+    28% { background-color: yellow; } /* 28%の位置では黄色 */
+    42% { background-color: green; } /* 42%の位置では緑色 */
+    56% { background-color: blue; } /* 56%の位置では青色 */
+    70% { background-color: indigo; } /* 70%の位置ではインディゴ色 */
+    84% { background-color: violet; } /* 84%の位置では紫色 */
+    100% { background-color: red; } /* 100%の位置では再び赤色 */
+}
+
+/* ログインボタンのホバー時のスタイル */
+input[type="submit"]:hover {
+    animation: none; /* ホバー時にアニメーションを停止 */
+    background-color: blue; /* ホバー時の背景色を青に設定 */
+}
+
+
+

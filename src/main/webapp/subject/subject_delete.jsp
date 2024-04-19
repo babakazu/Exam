@@ -11,5 +11,9 @@
         Subject Code to Delete: <input type="text" name="code"><br>
         <input type="submit" value="Delete">
     </form>
+    <br>
+    <a href="subject_list.jsp">Subject List</a>
+    <a href="subject_insert.jsp">Insert Subject</a>
+    <a href="subject_update.jsp">Update Subject</a>
 </body>
 </html>
