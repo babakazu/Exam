@@ -1,4 +1,4 @@
-/* ページ全体のスタイル */
+/* ログイン画面全体のスタイル */
 body {
     font-family: Arial, sans-serif; /* フォントファミリーの指定 */
     margin: 0; /* マージンをリセット */
@@ -10,13 +10,21 @@ body {
     background-color: #f4f4f4; /* 背景色 */
 }
 
-/* フォームのスタイル */
+/* ログインフォームのスタイル */
 form {
     padding: 20px; /* 内側のパディング */
     background: #fff; /* 背景色 */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* 影の設定 */
     border-radius: 5px; /* 角丸 */
 }
+
+/* タイトルのスタイル */
+.login-title {
+    text-align: center; /* 中央揃え */
+    font-size: 24px; /* フォントサイズ */
+    margin-bottom: 20px; /* 下側のマージン */
+}
+
 
 /* テキスト入力フィールドのスタイル */
 input[type="text"], input[type="password"] {
