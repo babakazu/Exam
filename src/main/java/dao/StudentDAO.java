@@ -3,50 +3,37 @@ package dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 import bean.Student;
 
 public class StudentDAO extends DAO {
-    public List<Student> search(String keyword) throws Exception {
-        List<Student> list = new ArrayList<>();
 
-        Connection con = getConnection();
+    public List<Student> getStudentList() {
+        List<Student> studentList = new ArrayList<>();
 
-        PreparedStatement st = con.prepareStatement(
-                "SELECT * FROM student WHERE name LIKE ?");
-        st.setString(1, "%" + keyword + "%");
-        ResultSet rs = st.executeQuery();
+        try (Connection connection = getConnection();
+             PreparedStatement statement = connection.prepareStatement("SELECT * FROM student");
+             ResultSet resultSet = statement.executeQuery()) {
 
-        while (rs.next()) {
-            Student student = new Student();
-            student.setEnrollmentYear(rs.getInt("enrollmentYear"));
-            student.setStudentNumber(rs.getInt("studentNumber"));
-            student.setName(rs.getString("name"));
-            student.setClassName(rs.getString("className"));
-            student.setEnrolled(rs.getBoolean("isEnrolled"));
-            list.add(student);
+            while (resultSet.next()) {
+                Student student = new Student();
+                student.setNo(resultSet.getString("no"));
+                student.setName(resultSet.getString("name"));
+                student.setEnt_year(resultSet.getString("ent_year"));
+                student.setClass_num(resultSet.getString("class_num"));
+                student.setIs_attend(resultSet.getString("is_attend"));
+                student.setSchool_cd(resultSet.getString("school_cd"));
+                studentList.add(student);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
-        st.close();
-        con.close();
-
-        return list;
-    }
-
-    public int insert(Student student) throws Exception {
-        Connection con = getConnection();
-        PreparedStatement st = con.prepareStatement(
-                "INSERT INTO student (enrollmentYear, studentNumber, name, className, isEnrolled) VALUES (?, ?, ?, ?, ?)");
-        st.setInt(1, student.getEnrollmentYear());
-        st.setInt(2, student.getStudentNumber());
-        st.setString(3, student.getName());
-        st.setString(4, student.getClassName());
-        st.setBoolean(5, student.isEnrolled());
-        int result = st.executeUpdate();
-        st.close();
-        con.close();
-        return result;
+        return studentList;
     }
 }

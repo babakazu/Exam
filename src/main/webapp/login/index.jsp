@@ -2,6 +2,5 @@
 
 <%@include file="login-in.jsp" %>
 
-得点管理システム
 
 
