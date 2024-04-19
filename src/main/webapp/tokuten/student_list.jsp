@@ -1,7 +1,7 @@
 <%@page contentType="text/html; charset=UTF-8" %>
 <%@page import="java.util.List"%>
+<%@ include file="../header.jsp" %>
 
-<link rel="stylesheet" type="text/css" href="../css/style.css">
 
 <h2>学生管理</h2>
 
@@ -32,3 +32,4 @@
 		</c:forEach>
     </tr>
 </table>
+<%@include file="../footer.jsp" %>

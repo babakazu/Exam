@@ -1,5 +1,5 @@
 <%@page contentType="text/html; charset=UTF-8" %>
-
+<%@ include file="../header.jsp" %>
 <link rel="stylesheet" type="text/css" href="../css/style.css">
 
 <h2>メニュー</h2>
