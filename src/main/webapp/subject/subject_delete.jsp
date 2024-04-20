@@ -5,14 +5,14 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Delete Subject</title>
+    <title>科目削除</title>
 </head>
 <body>
-    <h1>Delete Subject</h1>
+    <h1>科目削除</h1>
     <form method="post" action="subject_delete.jsp">
-        School Code: <input type="text" name="schoolCode"><br>
-        Code: <input type="text" name="code"><br>
-        <input type="submit" value="Delete">
+        学校コード: <input type="text" name="schoolCode"><br>
+        科目コード: <input type="text" name="code"><br>
+        <input type="submit" value="削除">
     </form>
     <%
         if (request.getMethod().equals("POST")) {

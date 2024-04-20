@@ -5,15 +5,15 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Insert Subject</title>
+    <title>科目追加</title>
 </head>
 <body>
-    <h1>Insert Subject</h1>
+    <h1>科目追加</h1>
     <form method="post" action="subject_insert.jsp">
-        School Code: <input type="text" name="schoolCode"><br>
-        Code: <input type="text" name="code"><br>
-        Name: <input type="text" name="name"><br>
-        <input type="submit" value="Submit">
+        学校コード: <input type="text" name="schoolCode"><br>
+        科目コード: <input type="text" name="code"><br>
+        科目名: <input type="text" name="name"><br>
+        <input type="submit" value="追加">
     </form>
     <%
         if (request.getMethod().equals("POST")) {

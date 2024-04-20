@@ -6,15 +6,15 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Subject List</title>
+    <title>科目一覧</title>
 </head>
 <body>
-    <h1>Subject List</h1>
+    <h1>科目一覧</h1>
     <table border="1">
         <tr>
-            <th>School Code</th>
-            <th>Code</th>
-            <th>Name</th>
+            <th>学校コード</th>
+            <th>科目コード</th>
+            <th>科目名</th>
         </tr>
         <%
             SubjectDAO subjectDAO = new SubjectDAO();
