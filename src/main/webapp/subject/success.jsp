@@ -6,8 +6,8 @@
     <title>Success</title>
 </head>
 <body>
-    <h2>Update Successful</h2>
-    <p>The subject information has been updated successfully.</p>
-    <a href="updateSubject.jsp">Back to Update Subject</a>
+    <h2>更新が完了しました。</h2>
+    <p>処理に成功しました</p>
+    <a href="updateSubject.jsp">変更に戻る</a>
 </body>
 </html>

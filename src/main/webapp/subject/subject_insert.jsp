@@ -8,6 +8,12 @@
     <title>科目追加</title>
 </head>
 <body>
+	<a href="../login/menu.jsp">メインメニュー</a>
+ 	<a href="subject_list.jsp">科目一覧</a>
+    <a href="subject_delete.jsp">科目削除</a>
+    <a href="updateSubject.jsp">科目変更</a>
+    <a href="../login/logout-in.jsp">ログアウト</a>　
+	
     <h1>科目追加</h1>
     <form method="post" action="subject_insert.jsp">
         学校コード: <input type="text" name="schoolCode"><br>
