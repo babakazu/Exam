@@ -12,11 +12,15 @@ import javax.sql.DataSource;
 import bean.Subject;
 
 public class SubjectDAO {
-    private DataSource ds;
+	private DataSource ds;
 
-    public SubjectDAO() throws Exception {
-        InitialContext ic = new InitialContext();
-        ds = (DataSource) ic.lookup("java:/comp/env/jdbc/kouka");
+    public SubjectDAO() {
+        try {
+            InitialContext initialContext = new InitialContext();
+            ds = (DataSource) initialContext.lookup("java:comp/env/jdbc/kouka");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public List<Subject> getAllSubjects() throws Exception {

@@ -6,14 +6,28 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.naming.InitialContext;
+import javax.sql.DataSource;
+
 import bean.Student;
 
 public class StudentDAO extends DAO {
 
+    private DataSource dataSource;
+
+    public StudentDAO() {
+        try {
+            InitialContext initialContext = new InitialContext();
+            dataSource = (DataSource) initialContext.lookup("java:comp/env/jdbc/kouka");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public List<Student> search(String keyword) {
         List<Student> list = new ArrayList<>();
 
-        try (Connection connection = getConnection();
+        try (Connection connection = dataSource.getConnection();
              PreparedStatement statement = connection.prepareStatement("SELECT * FROM student WHERE name LIKE ?");
         ) {
             statement.setString(1, "%" + keyword + "%");
