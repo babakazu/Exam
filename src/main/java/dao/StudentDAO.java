@@ -11,36 +11,62 @@ import javax.sql.DataSource;
 
 import bean.Student;
 
-public class StudentDAO extends DAO {
-
-    private DataSource dataSoure;
+public class StudentDAO {
+    private DataSource ds;
 
     public StudentDAO() {
         try {
             InitialContext initialContext = new InitialContext();
-            dataSource = (DataSource) initialContext.lookup("java:comp/env/jdbc/kouka");
+            ds = (DataSource) initialContext.lookup("java:comp/env/jdbc/kouka");
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public List<Student> getAllSubjects() throws Exception {
-        List<Student> subjects = new ArrayList<>();
-        String query = "SELECT SCHOOL_CD, CD, NAME FROM SUBJECT";
+    public List<Student> getAllStudents() {
+        List<Student> students = new ArrayList<>();
+        String query = "SELECT NO, NAME, ENT_YEAR, CLASS_NUM, IS_ATTEND, SCHOOL_CD FROM student";
 
         try (Connection conn = ds.getConnection();
              PreparedStatement ps = conn.prepareStatement(query);
              ResultSet rs = ps.executeQuery()) {
 
             while (rs.next()) {
-                String schoolCode = rs.getString("SCHOOL_CD");
-                String code = rs.getString("CD");
-                String name = rs.getString("NAME");
-                Subject subject = new Subject(schoolCode, code, name);
-                subjects.add(subject);
+                Student student = new Student();
+                student.setNo(rs.getString("NO"));
+                student.setName(rs.getString("NAME"));
+                student.setEnt_year(rs.getString("ENT_YEAR"));
+                student.setClass_num(rs.getString("CLASS_NUM"));
+                student.setIs_attend(rs.getString("IS_ATTEND"));
+                student.setSchool_cd(rs.getString("SCHOOL_CD"));
+                students.add(student);
             }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
-        return subjects;
+        return students;
+    }
+
+
+
+public void addStudent(Student student) {
+    String query = "INSERT INTO student (NO, NAME, ENT_YEAR, CLASS_NUM, IS_ATTEND, SCHOOL_CD) VALUES (?, ?, ?, ?, ?, ?)";
+    try (Connection conn = ds.getConnection();
+         PreparedStatement ps = conn.prepareStatement(query)) {
+
+        ps.setString(1, student.getNo());
+        ps.setString(2, student.getName());
+        ps.setString(3, student.getEnt_year());
+        ps.setString(4, student.getClass_num());
+        ps.setString(5, student.getIs_attend());
+        ps.setString(6, student.getSchool_cd());
+
+        ps.executeUpdate();
+    } catch (Exception e) {
+        e.printStackTrace();
     }
 }
+}
+
+

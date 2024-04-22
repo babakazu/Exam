@@ -8,19 +8,6 @@ public class Student {
     private String is_attend;
     private String school_cd;
 
-    public Student() {
-        // デフォルトコンストラクタ
-    }
-
-    public Student(String no, String name , String ent_year , String class_num , String is_attend , String school_cd) {
-        this.no = no;
-        this.name = name;
-        this.ent_year = ent_year;
-        this.class_num = class_num;
-        this.is_attend = is_attend;
-        this.school_cd = school_cd;
-    }
-
     public String getNo() {
         return no;
     }
