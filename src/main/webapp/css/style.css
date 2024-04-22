@@ -115,3 +115,74 @@ body {
     text-align: center; /* 動画を中央寄せ */
     margin-top: 20px; /* メニューとの間隔 */
 }
+
+/* ヘッダーのスタイル */
+.header {
+    background-color: #007bff; /* 薄い青色の背景 */
+    color: #000; /* 黒文字 */
+    text-align: center; /* 中央揃え */
+    padding: 20px 0; /* 上下のパディング */
+}
+
+.header-title {
+    font-size: 24px; /* 大きな文字 */
+}
+
+/* フッターのスタイル */
+.footer {
+    background-color: #f4f4f4; /* 灰色の背景 */
+    color: #000; /* 黒文字 */
+    text-align: center; /* 中央揃え */
+    padding: 20px 0; /* 上下のパディング */
+}
+
+.footer-content {
+    font-size: 14px; /* 小さな文字 */
+}
+
+/* HTMLとBODYの基本設定 */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif; /* フォントスタイルの指定 */
+}
+
+/* ヘッダー部分のスタイリング */
+.header {
+    background-color: lightblue; /* 背景色 */
+    color: black; /* 文字色 */
+    text-align: center; /* 中央揃え */
+    padding: 10px 20px; /* 内側の余白 */
+    margin: 0 30px; /* 外側の余白 (左右の幅を縮める) */
+}
+
+/* フッター部分のスタイリング */
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 0; /* 左端から始める */
+    right: 0; /* 右端まで広がる */
+    background-color: gray; /* 背景色 */
+    color: white; /* 文字色 */
+    text-align: center; /* テキストを中央揃え */
+    padding: 5px 20px; /* 内側の余白 */
+    margin: 0 30px; /* 左右のマージンを均等に設定 */
+    box-sizing: border-box; /* ボーダーとパディングを幅に含める */
+}
+
+/* フッター内のコンテンツ配置 */
+.footer-content {
+    display: flex;
+    flex-direction: column; /* 縦並び */
+    justify-content: center; /* 中央寄せ */
+    align-items: center; /* アイテムを中央に配置 */
+}
+
+
+/* 主コンテンツ領域のスタイリング */
+.content {
+    padding: 20px;
+    margin: 0 30px; /* ここも左右の余白を調整 */
+    flex: 1 0 auto;
+}

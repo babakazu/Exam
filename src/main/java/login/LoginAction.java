@@ -22,7 +22,7 @@ public class LoginAction extends Action {
 
         if (teacher != null) {
             session.setAttribute("teacher", teacher); // セッション属性を "teacher" に変更
-            return "login-out.jsp";
+            return "menu.jsp";
         }
 
         return "login-error.jsp";

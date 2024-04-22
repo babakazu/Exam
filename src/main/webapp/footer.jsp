@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" %>
-<head>
-    <meta charset="UTF-8">
-</head>
-<body>
-    <footer>
-        <div>© 2023 TIC</div> 
-        <div>学園</div> 
+<%@ page contentType="text/html; charset=UTF-8" %>
+<link rel="stylesheet" type="text/css" href="../css/style.css">
+    <footer class="footer">
+        <div class="footer-content">
+            <div>© 2023 TIC</div>
+            <div>学園</div>
+        </div>
     </footer>
 </body>
+</html>

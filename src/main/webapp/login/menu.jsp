@@ -12,9 +12,4 @@
     <a href="logout-in.jsp">ログアウト</a>
 </div>
 
-<div class="video-container">
-    <video width="60%" controls>
-        <source src="../image/syoukai.mp4" type="video/mp4">
-        お使いのブラウザはビデオタグをサポートしていません。
-    </video>
-</div>
+<%@ include file="../footer.jsp" %>
