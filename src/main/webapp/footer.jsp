@@ -3,7 +3,7 @@
     <footer class="footer">
         <div class="footer-content">
             <div>© 2023 TIC</div>
-            <div>学園</div>
+            <div>大原学園学園</div>
         </div>
     </footer>
 </body>
