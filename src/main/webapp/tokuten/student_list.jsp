@@ -1,4 +1,6 @@
 <%@page contentType="text/html; charset=UTF-8" %>
+<%@ page import="bean.Student" %>
+<%@ page import="dao.StudentDAO" %>
 <%@page import="java.util.List"%>
 <%@ include file="../header.jsp" %>
 
@@ -27,7 +29,7 @@
         
         <c:forEach var="s" items="${list}">
 		<tr>
-			<th>${student.no}</th><th>${student.name}</th><th>${student.entyear}</th><th>${student.class_num}</th><th>${student.is_attend}</th><th>${student.school_cd}</th><br>
+			<th>${s.no}</th><th>${s.name}</th><th>${s.entyear}</th><th>${s.class_num}</th><th>${s.is_attend}</th><th>${s.school_cd}</th><br>
 		</tr>
 		</c:forEach>
     </tr>

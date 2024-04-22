@@ -13,7 +13,7 @@ import bean.Student;
 
 public class StudentDAO extends DAO {
 
-    private DataSource dataSource;
+    private DataSource dataSoure;
 
     public StudentDAO() {
         try {
@@ -24,29 +24,23 @@ public class StudentDAO extends DAO {
         }
     }
 
-    public List<Student> search(String keyword) {
-        List<Student> list = new ArrayList<>();
+    public List<Student> getAllSubjects() throws Exception {
+        List<Student> subjects = new ArrayList<>();
+        String query = "SELECT SCHOOL_CD, CD, NAME FROM SUBJECT";
 
-        try (Connection connection = dataSource.getConnection();
-             PreparedStatement statement = connection.prepareStatement("SELECT * FROM student WHERE name LIKE ?");
-        ) {
-            statement.setString(1, "%" + keyword + "%");
-            ResultSet resultSet = statement.executeQuery();
+        try (Connection conn = ds.getConnection();
+             PreparedStatement ps = conn.prepareStatement(query);
+             ResultSet rs = ps.executeQuery()) {
 
-            while (resultSet.next()) {
-                Student student = new Student();
-                student.setNo(resultSet.getString("no"));
-                student.setName(resultSet.getString("name"));
-                student.setEnt_year(resultSet.getString("ent_year"));
-                student.setClass_num(resultSet.getString("class_num"));
-                student.setIs_attend(resultSet.getString("is_attend"));
-                student.setSchool_cd(resultSet.getString("school_cd"));
-                list.add(student);
+            while (rs.next()) {
+                String schoolCode = rs.getString("SCHOOL_CD");
+                String code = rs.getString("CD");
+                String name = rs.getString("NAME");
+                Subject subject = new Subject(schoolCode, code, name);
+                subjects.add(subject);
             }
-        } catch (Exception e) {
-            e.printStackTrace();
         }
 
-        return list;
+        return subjects;
     }
 }
