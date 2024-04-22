@@ -2,7 +2,7 @@
 <%@ include file="../header.jsp" %>
 <link rel="stylesheet" type="text/css" href="../css/style.css">
 
-<h2>メニュー</h2>
+<h2>メニュー</h2> 
 
 <div class="menu-links">
     <a href="../tokuten/student_list.jsp">学生管理一覧</a>
