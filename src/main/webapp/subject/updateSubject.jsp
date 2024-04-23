@@ -8,11 +8,7 @@
 <title>科目更新</title>
 </head>
 <body>
-	<a href="../login/menu.jsp">メインメニュー</a>
-	<a href="subject_list.jsp">科目一覧</a>
-    <a href="subject_insert.jsp">科目追加</a>
-    <a href="subject_delete.jsp">科目削除</a>
-    <a href="../login/logout-in.jsp">ログアウト</a>　
+
 	
     <h2>科目更新フォーム</h2>
     <form action="UpdateSubjectServlet" method="post">

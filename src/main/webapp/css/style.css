@@ -238,3 +238,53 @@ body {
     white-space: nowrap; /* テキストを折り返さない */
 }
 
+.subject-list-container {
+    width: 80%;
+    margin: auto;
+}
+
+.subject-list-table {
+    width: 100%; /* テーブルの幅を拡大 */
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.subject-list-table th, .subject-list-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.subject-list-table th {
+    background-color: #f2f2f2;
+}
+
+/* リンクのスタイリング */
+.subject-list-table a {
+    color: blue;
+    text-decoration: none;
+}
+
+.subject-list-table a:hover {
+    text-decoration: underline;
+}
+
+.subject-list-container {
+    width: 80%;
+    margin: auto;
+    position: relative; /* 相対位置付け */
+}
+
+.new-subject-link {
+    position: absolute; /* 絶対位置付け */
+    top: 0; /* 上部に配置 */
+    right: 0; /* 右端に配置 */
+    margin: 10px;
+    color: blue;
+    text-decoration: none;
+}
+
+.new-subject-link:hover {
+    text-decoration: underline;
+}
+

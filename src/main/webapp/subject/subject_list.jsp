@@ -9,20 +9,17 @@
     <meta charset="UTF-8">
     <title>科目一覧</title>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
-    <link rel="stylesheet" type="text/css" href="../css/subject-list.css"> <!-- 追加 -->
+    <link rel="stylesheet" type="text/css" href="../css/subject-list.css">
 </head>
 <body>
-    <a href="../login/menu.jsp">メインメニュー</a>
-    <a href="subject_insert.jsp">科目追加</a>
-    <a href="subject_delete.jsp">科目削除</a>
-    <a href="updateSubject.jsp">科目変更</a>
-    <a href="../login/logout-in.jsp">ログアウト</a>　
-    <div class="subject-list-container"> <!-- 追加 -->
-        <h1>科目一覧</h1>
-        <table class="subject-list-table"> <!-- 追加 -->
+    <div class="subject-list-container">
+        <h1>科目管理</h1>
+        <a href="subject_insert.jsp" class="new-subject-link">新規登録</a> 
+        <table class="subject-list-table">
             <tr>
                 <th>科目コード</th>
                 <th>科目名</th>
+                <th> </th> <!-- 操作の見出しを追加 -->
             </tr>
             <%
                 SubjectDAO subjectDAO = new SubjectDAO();
@@ -32,12 +29,16 @@
                 <tr>
                     <td><%= subject.getCode() %></td>
                     <td><%= subject.getName() %></td>
+                    <td>
+                        <a href="updateSubject.jsp">変更</a>
+                        <a href="subject_delete.jsp">削除</a> <!-- 削除リンク -->
+                    </td>
                 </tr>
             <%
                 }
             %>
         </table>
-    </div> <!-- 追加 -->
+    </div>
 </body>
 </html>
 <%@ include file="../footer.jsp" %>
