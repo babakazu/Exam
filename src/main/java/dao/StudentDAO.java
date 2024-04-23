@@ -67,6 +67,57 @@ public void addStudent(Student student) {
         e.printStackTrace();
     }
 }
-}
 
+public List<Student> searchStudents(String entYear, String classNum, boolean isAttend) {
+    List<Student> students = new ArrayList<>();
+    String query = "SELECT NO, NAME, ENT_YEAR, CLASS_NUM, IS_ATTEND, SCHOOL_CD FROM student WHERE ";
+    List<String> conditions = new ArrayList<>();
+
+    if (entYear != null && !entYear.isEmpty()) {
+        conditions.add("ENT_YEAR = ?");
+    }
+
+    if (classNum != null && !classNum.isEmpty()) {
+        conditions.add("CLASS_NUM = ?");
+    }
+
+    if (isAttend) {
+        conditions.add("IS_ATTEND = 'TRUE'");
+    } else {
+        conditions.add("IS_ATTEND IS FALSE");
+    }
+
+    query += String.join(" AND ", conditions);
+
+    try (Connection conn = ds.getConnection();
+         PreparedStatement ps = conn.prepareStatement(query)) {
+
+        int index = 1;
+        if (entYear != null && !entYear.isEmpty()) {
+            ps.setString(index++, entYear);
+        }
+
+        if (classNum != null && !classNum.isEmpty()) {
+            ps.setString(index++, classNum);
+        }
+
+        try (ResultSet rs = ps.executeQuery()) {
+            while (rs.next()) {
+                Student student = new Student();
+                student.setNo(rs.getString("NO"));
+                student.setName(rs.getString("NAME"));
+                student.setEnt_year(rs.getString("ENT_YEAR"));
+                student.setClass_num(rs.getString("CLASS_NUM"));
+                student.setIs_attend(rs.getString("IS_ATTEND"));
+                student.setSchool_cd(rs.getString("SCHOOL_CD"));
+                students.add(student);
+            }
+        }
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+
+    return students;
+}
+}
 
