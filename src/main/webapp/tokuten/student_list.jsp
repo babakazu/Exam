@@ -3,6 +3,7 @@
 <%@ page import="dao.StudentDAO" %>
 <%@page import="java.util.List"%>
 <%@ include file="../header.jsp" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,17 +42,18 @@
     </form>
 </div>
      <%
-        String entYear = request.getParameter("entYear");
-        String classNum = request.getParameter("classNum");
-        String isAttend = request.getParameter("isAttend");
-        List<Student> students;
-        StudentDAO studentDAO = new StudentDAO();
-        if (entYear != null || classNum != null || isAttend != null) {
-            students = studentDAO.searchStudents(entYear, classNum, "TRUE".equals(isAttend));
-        } else {
-            students = studentDAO.getAllStudents();
-        }
-    %>
+    String entYear = request.getParameter("entYear");
+    String classNum = request.getParameter("classNum");
+    String isAttend = request.getParameter("isAttend");
+    List<Student> students;
+    StudentDAO studentDAO = new StudentDAO();
+    if (entYear != null && !entYear.isEmpty() || classNum != null && !classNum.isEmpty() || isAttend != null && !isAttend.isEmpty()) {
+        students = studentDAO.searchStudents(entYear, classNum, "TRUE".equals(isAttend));
+    } else {
+        students = studentDAO.getAllStudents();
+    }
+%>
+     
     <table border="1">
         <tr>
             <th>学籍番号</th>
@@ -69,7 +71,8 @@
                 <td><%= student.getClass_num() %></td>
                 <td><%= student.getIs_attend() %></td>
                 <td><%= student.getSchool_cd() %></td>
-                <td><a href="student_update.jsp?no=<%= student.getNo() %>">変更</a></td>
+                <td><a href="student_update.jsp?no=<%= student.getNo() %>&entYear=<%= student.getEnt_year() %>">変更</a></td>
+                
             </tr>
         <% } %>
     </table>
