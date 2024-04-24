@@ -119,5 +119,22 @@ public List<Student> searchStudents(String entYear, String classNum, boolean isA
 
     return students;
 }
+
+public void updateStudent(String no, String entYear, String name, String classNum, String isAttend) {
+    String query = "UPDATE student SET NAME = ?, CLASS_NUM = ?, IS_ATTEND = ? WHERE NO = ? AND ENT_YEAR = ?";
+    try (Connection conn = ds.getConnection();
+         PreparedStatement ps = conn.prepareStatement(query)) {
+
+        ps.setString(1, name);
+        ps.setString(2, classNum);
+        ps.setString(3, isAttend);
+        ps.setString(4, no);
+        ps.setString(5, entYear);
+
+        ps.executeUpdate();
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}
 }
 

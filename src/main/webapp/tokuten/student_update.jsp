@@ -1,40 +1,46 @@
- <%@page contentType="text/html; charset=UTF-8" %>
+<%@page contentType="text/html; charset=UTF-8" %>
+<%@ page import="bean.Student" %>
+<%@ page import="dao.StudentDAO" %>
+<%@page import="java.util.List"%>
+<%@ include file="../header.jsp" %>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>学生情報変更</title>
+    <style>
+        /* スタイルは省略 */
+    </style>
+</head>
+<body>
+    <h2>学生情報変更</h2>
 
-
-<h2>学生管理</h2>
-
-<div class="menu-links">
-    <a href="student_list.jsp">学生一覧</a>
-    <a href="student_insert.jsp">学生登録</a>
-    <a href="../grades/grades_insert.jsp">成績登録</a>
-    <a href="../grades/grades_list.jsp">成績参照</a>
-    <a href="subject-management.jsp">科目管理</a>
-    <a href="../login/login-out.jsp">ログアウト</a>
-</div>
-
-    <div class="container-right">
-        <h2>学生変更フォーム</h2>
-        <form action="edit-student-process.jsp" method="post">
-            <!-- 変更前の学生情報を表示 -->
-            <label for="enrollmentYear">入学年度:</label>
-            <input type="number" id="enrollmentYear" name="enrollmentYear" value="入学年度を取得して設定" required><br>
-            <label for="studentNumber">学生番号:</label>
-            <input type="text" id="studentNumber" name="studentNumber" value="学生番号を取得して設定" required><br>
+    <div>
+        <form method="post" action="/test/main/StudentUpdateServlet">
+            <input type="hidden" name="no" value="<%= request.getParameter("no") %>">
+            <input type="hidden" name="entYear" value="<%= request.getParameter("entYear") %>">
+            <label for="no">学籍番号:</label>
+            <span id="noLabel"></span><br>
+            <label for="entYear">入学年度:</label>
+            <span id="entYearLabel"></span><br>
             <label for="name">氏名:</label>
-            <input type="text" id="name" name="name" value="氏名を取得して設定" required><br>
-            <label for="class">クラス:</label>
-            <input type="text" id="class" name="class" value="クラスを取得して設定" required><br>
-            <!-- 編集内容を入力するためのフォーム -->
-            <label for="newEnrollmentYear">新しい入学年度:</label>
-            <input type="number" id="newEnrollmentYear" name="newEnrollmentYear" required><br>
-            <label for="newStudentNumber">新しい学生番号:</label>
-            <input type="text" id="newStudentNumber" name="newStudentNumber" required><br>
-            <label for="newName">新しい氏名:</label>
-            <input type="text" id="newName" name="newName" required><br>
-            <label for="newClass">新しいクラス:</label>
-            <input type="text" id="newClass" name="newClass" required><br>
+            <input type="text" id="name" name="name">
+            <label for="classNum">クラス番号:</label>
+            <input type="text" id="classNum" name="classNum">
+            <label for="isAttend">出席状況:</label>
+            <select id="isAttend" name="isAttend">
+                <option value="TRUE">TRUE</option>
+                <option value="FALSE">FALSE</option>
+            </select>
             <input type="submit" value="変更">
-            <input type="button" value="戻る" onclick="location.href='student-list.jsp'">
         </form>
     </div>
-</div> 
+
+    <script>
+        document.getElementById("noLabel").textContent = "<%= request.getParameter("no") %>";
+        document.getElementById("entYearLabel").textContent = "<%= request.getParameter("entYear") %>";
+    </script>
+</body>
+</html>
+
+<%@ include file="../footer.jsp" %>
