@@ -16,7 +16,7 @@
     <h2>学生情報変更</h2>
 
     <div>
-        <form method="post" action="/test/main/StudentUpdateServlet">
+        <form method="post" action="/test/main/StudentUpdateServlet" onsubmit="return validateForm()">
             <input type="hidden" name="no" value="<%= request.getParameter("no") %>">
             <input type="hidden" name="entYear" value="<%= request.getParameter("entYear") %>">
             <label for="no">学籍番号:</label>
@@ -39,8 +39,18 @@
     <script>
         document.getElementById("noLabel").textContent = "<%= request.getParameter("no") %>";
         document.getElementById("entYearLabel").textContent = "<%= request.getParameter("entYear") %>";
+
+        function validateForm() {
+            var name = document.getElementById("name").value;
+            var classNum = document.getElementById("classNum").value;
+            if (name.trim() === "" || classNum.trim() === "") {
+                alert("氏名とクラス番号の両方を入力してください");
+                return false;
+            }
+            return true;
+        }
     </script>
 </body>
 </html>
 
-<%@ include file="../footer.jsp" %>
+<%@ include file="../footer.jsp" %>	

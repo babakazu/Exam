@@ -136,5 +136,19 @@ public void updateStudent(String no, String entYear, String name, String classNu
         e.printStackTrace();
     }
 }
+
+public void insertStudent(String entYear, String no, String name, String classNum) {
+    try (Connection conn = ds.getConnection();
+         PreparedStatement ps = conn.prepareStatement("INSERT INTO students (ent_year, no, name, class_num) VALUES (?, ?, ?, ?)")) {
+        ps.setString(1, entYear);
+        ps.setString(2, no);
+        ps.setString(3, name);
+        ps.setString(4, classNum);
+        ps.executeUpdate();
+    } catch (Exception e) {
+        e.printStackTrace();
+        // エラー処理を追加する
+    }
+}
 }
 
