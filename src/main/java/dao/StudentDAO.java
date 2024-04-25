@@ -139,7 +139,7 @@ public void updateStudent(String no, String entYear, String name, String classNu
 
 public void insertStudent(String entYear, String no, String name, String classNum) {
     try (Connection conn = ds.getConnection();
-         PreparedStatement ps = conn.prepareStatement("INSERT INTO students (ent_year, no, name, class_num) VALUES (?, ?, ?, ?)")) {
+         PreparedStatement ps = conn.prepareStatement("INSERT INTO STUDENT (ent_year, no, name, class_num) VALUES (?, ?, ?, ?)")) {
         ps.setString(1, entYear);
         ps.setString(2, no);
         ps.setString(3, name);
