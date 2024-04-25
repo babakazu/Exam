@@ -28,9 +28,10 @@
             <label for="classNum">クラス番号:</label>
             <input type="text" id="classNum" name="classNum">
             <label for="isAttend">出席状況:</label>
+            <label for="isAttend">出席状況:</label>
             <select id="isAttend" name="isAttend">
-                <option value="TRUE">TRUE</option>
-                <option value="FALSE">FALSE</option>
+            <option value="〇">〇</option>
+            <option value="×">×</option>
             </select>
             <input type="submit" value="変更">
         </form>

@@ -35,8 +35,8 @@
             <input type="text" id="classNum" name="classNum">
             <label for="isAttend">出席状況:</label>
             <select id="isAttend" name="isAttend">
-                <option value="TRUE">TRUE</option>
-                <option value="FALSE">FALSE</option>
+            <option value="〇">〇</option>
+            <option value="×">×</option>
             </select>
             <input type="submit" value="検索">
         </form>
@@ -67,16 +67,16 @@
                     <th>学校コード</th>
                 </tr>
                 <% for (Student student : students) { %>
-                    <tr>
-                        <td><%= student.getNo() %></td>
-                        <td><%= student.getName() %></td>
-                        <td><%= student.getEnt_year() %></td>
-                        <td><%= student.getClass_num() %></td>
-                        <td><%= student.getIs_attend() %></td>
-                        <td><%= student.getSchool_cd() %></td>
-                        <td><a href="student_update.jsp?no=<%= student.getNo() %>&entYear=<%= student.getEnt_year() %>">変更</a></td>
-                    </tr>
-                <% } %>
+    <tr>
+        <td><%= student.getNo() %></td>
+        <td><%= student.getName() %></td>
+        <td><%= student.getEnt_year() %></td>
+        <td><%= student.getClass_num() %></td>
+        <td><%= student.getIs_attend().equals("TRUE") ? "〇" : "×" %></td>
+        <td><%= student.getSchool_cd() %></td>
+        <td><a href="student_update.jsp?no=<%= student.getNo() %>&entYear=<%= student.getEnt_year() %>">変更</a></td>
+    </tr>
+<% } %>
             </table>
         <% } %>
 </body>
