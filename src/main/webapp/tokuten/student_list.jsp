@@ -2,7 +2,7 @@
 <%@ page import="bean.Student" %>
 <%@ page import="dao.StudentDAO" %>
 <%@page import="java.util.List"%>
-<%@ include file="../header.jsp" %>
+<%@ include file="../login/menu.jsp" %>
 
 <!DOCTYPE html>
 <html>
@@ -14,16 +14,6 @@
     </style>
 </head>
 <body>
-    <h2>学生管理</h2>
-
-    <div class="menu-links">
-        <a href="student_insert.jsp">学生登録</a>
-        <a href="student_update.jsp">学生変更</a>
-        <a href="../grades/grades_insert.jsp">成績登録</a>
-        <a href="../grades/grades_list.jsp">成績参照</a>
-        <a href="../subject/subject_list.jsp">科目管理</a>
-        <a href="../login/login-out.jsp">ログアウト</a>
-    </div>
 
     <h3>学生一覧</h3>
 
@@ -82,4 +72,3 @@
 </body>
 </html>
 
-<%@ include file="../footer.jsp" %>

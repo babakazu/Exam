@@ -2,7 +2,7 @@
 <%@ page import="bean.Student" %>
 <%@ page import="dao.StudentDAO" %>
 <%@page import="java.util.List"%>
-<%@ include file="../header.jsp" %>
+<%@ include file="../login/menu.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -53,5 +53,3 @@
     </script>
 </body>
 </html>
-
-<%@ include file="../footer.jsp" %>	

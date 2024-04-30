@@ -4,7 +4,7 @@
 
 
 <div class="menu-links">
-    <a href="menu.jsp">メニュー</a>
+    <a href="../login/menu.jsp">メニュー</a>
     <a href="../tokuten/student_list.jsp">学生管理一覧</a>
     <a href="GradeManagement.jsp">成績管理一覧</a>
     <a href="GradeSearch.jsp">成績参照検索</a>
@@ -12,3 +12,4 @@
 </div>
 
 <%@ include file="../footer.jsp" %>
+
