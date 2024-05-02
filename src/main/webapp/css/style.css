@@ -191,7 +191,9 @@ html, body {
     padding: 20px;
     margin: 0 30px; /* ここも左右の余白を調整 */
     flex: 1 0 auto;
+   
 }
+    
 
 
 /* 新しいスタイル */
