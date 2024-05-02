@@ -148,17 +148,23 @@ html, body {
     font-family: Arial, sans-serif; /* フォントスタイルの指定 */
 }
 
-/* ヘッダー部分のスタイリング */
 .header {
-     width: 80%; /* 幅を画面の80%に設定 */
-    height: 50px; /* 高さを50pxに設定 */
-    background-color: lightblue; /* 背景色 */
-    color: black; /* 文字色 */
-    text-align: center; /* テキストを中央揃え */
-    margin: 0 auto; /* 左右のマージンを自動にして中央に配置 */
-    padding: 10px 0; /* 上下のパディング */
+    position: relative; /* 相対位置に設定 */
+    width: 80%;
+    height: 50px;
+    background-color: lightblue;
+    color: black;
+    text-align: center;
+    margin: 0 auto;
+    padding: 10px 0;
 }
 
+.header a {
+    position: absolute; /* 絶対位置に設定 */
+    bottom: 0; /* 下端に配置 */
+    right: 0; /* 右端に配置 */
+    margin: 10px; /* マージンを設定 */
+}
 /* フッターのスタイル */
 .footer {
     position: fixed; /* 画面の一番下に固定 */
