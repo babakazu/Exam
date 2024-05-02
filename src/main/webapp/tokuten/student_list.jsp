@@ -9,9 +9,7 @@
 <head>
     <meta charset="UTF-8">
     <title>学生一覧</title>
-    <style>
-        /* スタイルは省略 */
-    </style>
+
 </head>
 <body>
 
@@ -25,8 +23,8 @@
             <input type="text" id="classNum" name="classNum">
             <label for="isAttend">出席状況:</label>
             <select id="isAttend" name="isAttend">
-            <option value="TRUE">〇</option>
-            <option value="FALSE">×</option>
+            <option value="〇">〇</option>
+            <option value="×">×</option>
             </select>
             <input type="submit" value="検索">
         </form>
@@ -47,7 +45,7 @@
         if (students.isEmpty()) { %>
             <p>学生情報が存在しません</p>
         <% } else { %>
-            <table border="1">
+            <table class="table-center" border="1">
                 <tr>
                     <th>学籍番号</th>
                     <th>名前</th>
