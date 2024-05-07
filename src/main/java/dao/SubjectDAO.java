@@ -12,7 +12,7 @@ import javax.sql.DataSource;
 import bean.Subject;
 
 public class SubjectDAO {
-	private DataSource ds;
+    private DataSource ds;
 
     public SubjectDAO() {
         try {
@@ -73,5 +73,23 @@ public class SubjectDAO {
             ps.setString(2, code);
             ps.executeUpdate();
         }
+    }
+
+    public String getCurrentSubjectCode(String schoolCd, String cd) throws Exception {
+        String query = "SELECT CD FROM SUBJECT WHERE SCHOOL_CD = ? AND CD = ?";
+        String currentCode = null;
+
+        try (Connection conn = ds.getConnection();
+             PreparedStatement ps = conn.prepareStatement(query)) {
+            ps.setString(1, schoolCd);
+            ps.setString(2, cd);
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    currentCode = rs.getString("CD");
+                }
+            }
+        }
+
+        return currentCode;
     }
 }

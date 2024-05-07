@@ -5,7 +5,6 @@ public class Subject {
     private String code;
     private String name;
 
-    // コンストラクタ、ゲッター、セッター
     public Subject() {}
 
     public Subject(String schoolCode, String code, String name) {
