@@ -14,6 +14,7 @@
 <body>
 
     <h3>学生一覧</h3>
+   
 
     <div>
         <form method="get" action="student_list.jsp">
@@ -23,8 +24,8 @@
             <input type="text" id="classNum" name="classNum">
             <label for="isAttend">出席状況:</label>
             <select id="isAttend" name="isAttend">
-            <option value="〇">〇</option>
-            <option value="×">×</option>
+            <option value="TRUE">〇</option>
+            <option value="FALSE">×</option>
             </select>
             <input type="submit" value="検索">
         </form>
