@@ -1,9 +1,17 @@
+
 <%@ page import="java.util.List"%>
 <%@ page import="bean.Subject"%>
 <%@ page import="dao.SubjectDAO"%>
 <%@ include file="../header.jsp"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
+<%@ page import="java.util.List" %>
+<%@ page import="bean.Subject" %>
+<%@ page import="dao.SubjectDAO" %>
+<%@ include file="../login/menu.jsp" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -44,4 +52,5 @@
 	</div>
 </body>
 </html>
+
 <%@ include file="../footer.jsp"%>

@@ -83,8 +83,6 @@ public List<Student> searchStudents(String entYear, String classNum, boolean isA
 
     if (isAttend) {
         conditions.add("IS_ATTEND = 'TRUE'");
-    } else {
-        conditions.add("IS_ATTEND IS FALSE");
     }
 
     query += String.join(" AND ", conditions);
@@ -119,6 +117,7 @@ public List<Student> searchStudents(String entYear, String classNum, boolean isA
 
     return students;
 }
+
 
 public void updateStudent(String no, String entYear, String name, String classNum, String isAttend) {
     String query = "UPDATE student SET NAME = ?, CLASS_NUM = ?, IS_ATTEND = ? WHERE NO = ? AND ENT_YEAR = ?";
