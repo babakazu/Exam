@@ -1,5 +1,4 @@
 <%@ page import="dao.SubjectDAO" %>
-<%@ page import="bean.Subject" %>
 <%@ include file="../header.jsp" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -9,21 +8,31 @@
     <title>科目削除</title>
 </head>
 <body>
-
-
     <h1>科目削除</h1>
-    <form method="post" action="subject_delete.jsp">
-        学校コード: <input type="text" name="schoolCode"><br>
-        科目コード: <input type="text" name="code"><br>
-        <input type="submit" value="削除">
-    </form>
     <%
-        if (request.getMethod().equals("POST")) {
-            String schoolCode = request.getParameter("schoolCode");
-            String code = request.getParameter("code");
+        String schoolCode = request.getParameter("schoolCd");
+        String code = request.getParameter("code");
+        String name = request.getParameter("name");
+        
+        if (request.getParameter("confirm") == null) {
+    %>
+            <p>科目 <%= name %> を削除します。本当によろしいですか？</p>
+            <form method="post" action="subject_delete.jsp">
+                <input type="hidden" name="schoolCd" value="<%= schoolCode %>">
+                <input type="hidden" name="code" value="<%= code %>">
+                <input type="hidden" name="name" value="<%= name %>">
+                <input type="hidden" name="confirm" value="true">
+                <input type="submit" value="削除">
+                <a href="subject_list.jsp">戻る</a>
+            </form>
+    <%
+        } else {
             SubjectDAO subjectDAO = new SubjectDAO();
             subjectDAO.deleteSubject(schoolCode, code);
-            out.println("Subject deleted successfully.");
+    %>
+            <p>科目 <%= name %> を削除しました。</p>
+            <a href="subject_list.jsp">戻る</a>
+    <%
         }
     %>
 </body>

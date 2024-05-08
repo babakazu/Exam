@@ -14,35 +14,33 @@
 <link rel="stylesheet" type="text/css" href="../css/subject-list.css">
 </head>
 <body>
-	<div class="subject-list-container">
-		<h1>科目管理</h1>
-		<a href="subject_insert.jsp" class="new-subject-link">新規登録</a>
-		<table class="subject-list-table">
-			<tr>
-				<th>科目コード</th>
-				<th>科目名</th>
-				<th>操作</th>
-			</tr>
-			<%
-			SubjectDAO subjectDAO = new SubjectDAO();
-			List<Subject> subjects = subjectDAO.getAllSubjects();
-			for (Subject subject : subjects) {
-			%>
-			<tr>
-				<td><%=subject.getCode()%></td>
-				<td><%=subject.getName()%></td>
-				<td><a
-					href="updateSubject.jsp?oldSchoolCd=<%=subject.getSchoolCode()%>&currentSubjectCode=<%=subject.getCode()%>&oldName=<%=subject.getName()%>">変更</a>
-					<a
-					href="subject_delete.jsp?schoolCd=<%=subject.getSchoolCode()%>&cd=<%=subject.getCode()%>">削除</a>
-				</td>
-			</tr>
-			</form>
-			<%
-			}
-			%>
-		</table>
-	</div>
+    <div class="subject-list-container">
+        <h1>科目管理</h1>
+        <a href="subject_insert.jsp" class="new-subject-link">新規登録</a>
+        <table class="subject-list-table">
+            <tr>
+                <th>科目コード</th>
+                <th>科目名</th>
+                <th>操作</th>
+            </tr>
+            <%
+            SubjectDAO subjectDAO = new SubjectDAO();
+            List<Subject> subjects = subjectDAO.getAllSubjects();
+            for (Subject subject : subjects) {
+            %>
+            <tr>
+                <td><%=subject.getCode()%></td>
+                <td><%=subject.getName()%></td>
+                <td>
+                    <a href="updateSubject.jsp?oldSchoolCd=<%=subject.getSchoolCode()%>&currentSubjectCode=<%=subject.getCode()%>&oldName=<%=subject.getName()%>">変更</a>
+                    <a href="subject_delete.jsp?schoolCd=<%=subject.getSchoolCode()%>&code=<%=subject.getCode()%>&name=<%=subject.getName()%>">削除</a>
+                </td>
+            </tr>
+            <%
+            }
+            %>
+        </table>
+    </div>
 </body>
 </html>
 
