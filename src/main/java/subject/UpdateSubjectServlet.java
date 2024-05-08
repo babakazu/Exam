@@ -36,7 +36,6 @@ public class UpdateSubjectServlet extends HttpServlet {
             String currentCd = subjectDAO.getCurrentSubjectCode(oldSchoolCd, oldCd);
 
             if (currentCd != null && currentCd.equals(oldCd)) {
-                // 学校コードがnullでないことを確認し、nullの場合はエラーメッセージを送信する
                 if (schoolCd != null) {
                     String updateQuery = "UPDATE SUBJECT SET SCHOOL_CD=?, CD=?, NAME=? WHERE SCHOOL_CD=? AND CD=?";
                     PreparedStatement updateStatement = connection.prepareStatement(updateQuery);
@@ -48,7 +47,8 @@ public class UpdateSubjectServlet extends HttpServlet {
 
                     int rowsUpdated = updateStatement.executeUpdate();
                     if (rowsUpdated > 0) {
-                        response.getWriter().println("科目が正常に更新されました！");
+                        // 更新が成功した場合、指定されたJSPページにリダイレクトする
+                        response.sendRedirect(request.getContextPath() + "/subject/subject_update_Done.jsp");
                     } else {
                         response.getWriter().println("科目の更新に失敗しました！");
                     }
