@@ -14,9 +14,12 @@
 <body>
 
     <h3>学生一覧</h3>
-   
 
     <div>
+    <div style="text-align: right; margin: 20px;">
+    <a href="student_insert.jsp" class="btn-register">新規登録</a>
+</div>
+    
         <form method="get" action="student_list.jsp">
             <label for="entYear">入学年度:</label>
             <input type="text" id="entYear" name="entYear">
@@ -24,8 +27,8 @@
             <input type="text" id="classNum" name="classNum">
             <label for="isAttend">出席状況:</label>
             <select id="isAttend" name="isAttend">
-            <option value="TRUE">〇</option>
-            <option value="FALSE">×</option>
+            <option value="〇">〇</option>
+            <option value="×">×</option>
             </select>
             <input type="submit" value="検索">
         </form>
