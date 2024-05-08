@@ -14,23 +14,26 @@
 <body>
 
     <h3>学生一覧</h3>
+   
 
     <div>
-    <div style="text-align: right; margin: 20px;">
-    <a href="student_insert.jsp" class="btn-register">新規登録</a>
-</div>
-    
         <form method="get" action="student_list.jsp">
             <label for="entYear">入学年度:</label>
-            <input type="text" id="entYear" name="entYear">
+            <select id="entYear" name="entYear">
+            <option value="2021">2021</option>
+            <option value="2023">2022</option>
+            <option value="2024">2023</option>
+            </select><br><br>
             <label for="classNum">クラス番号:</label>
-            <input type="text" id="classNum" name="classNum">
-            <label for="isAttend">出席状況:</label>
-            <select id="isAttend" name="isAttend">
-            <option value="〇">〇</option>
-            <option value="×">×</option>
-            </select>
-            <input type="submit" value="検索">
+            <select id="classNum" name="classNum">
+            <option value="201">201</option>
+            <option value="131">131</option>
+            <option value="101">101</option>
+            </select><br><br> 
+            <label for="isAttend">在学中</label>
+            <input type="checkbox" id="isAttend" name="isAttend" value="TRUE">
+            <input type="hidden" name="isAttend" value="FALSE">
+            <input type="submit" value="絞込み">
         </form>
     </div>
     
@@ -47,8 +50,9 @@
         }
         
         if (students.isEmpty()) { %>
-            <p>学生情報が存在しません</p>
-        <% } else { %>
+        <p>学生情報が存在しません</p>
+    <% } else { %>
+        <p>検索結果: <%= students.size() %>件</p>
             <table class="table-center" border="1">
                 <tr>
                     <th>学籍番号</th>
@@ -71,6 +75,7 @@
 <% } %>
             </table>
         <% } %>
+        
 </body>
 </html>
 

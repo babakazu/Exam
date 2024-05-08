@@ -27,15 +27,16 @@
             <input type="text" id="name" name="name">
             <label for="classNum">クラス番号:</label>
             <input type="text" id="classNum" name="classNum">
-            <label for="isAttend">出席状況:</label>
-            <label for="isAttend">出席状況:</label>
-            <select id="isAttend" name="isAttend">
-            <option value="〇">〇</option>
-            <option value="×">×</option>
-            </select>
+            <label for="isAttend">在学中</label>
+            <input type="checkbox" id="isAttend" name="isAttend" value="TRUE">
+            <input type="hidden" name="isAttend" value="FALSE">
+            
             <input type="submit" value="変更">
         </form>
     </div>
+    
+    
+   <a href="student_list.jsp">戻る</a>
 
     <script>
         document.getElementById("noLabel").textContent = "<%= request.getParameter("no") %>";
