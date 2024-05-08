@@ -18,7 +18,15 @@
         <label for="name">新しい科目名:</label>
         <input type="text" id="name" name="name"><br><br>
         
-        <input type="hidden" id="oldSchoolCd" name="oldSchoolCd" value="${oldSchoolCd}">
+        <%-- oldSchoolCd を hidden input として追加 --%>
+        <% String oldSchoolCd = request.getParameter("oldSchoolCd"); %>
+        <input type="hidden" id="oldSchoolCd" name="oldSchoolCd" value="<%= oldSchoolCd %>">
+        
+        <%-- 学校コードの値は非表示にする --%>
+        <input type="hidden" id="schoolCd" name="schoolCd" value="<%= oldSchoolCd %>">
+        
+        <%-- 現在の科目コード（CD）をhidden inputとしてフォームに追加 --%>
+        <input type="hidden" id="cd" name="cd" value="<%= cd %>">
         
         <input type="submit" value="変更">
     </form>
