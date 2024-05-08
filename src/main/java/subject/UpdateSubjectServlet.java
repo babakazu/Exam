@@ -20,10 +20,9 @@ public class UpdateSubjectServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String oldSchoolCd = request.getParameter("oldSchoolCd");
         String oldCd = request.getParameter("oldCd");
-        String oldName = request.getParameter("oldName");
+        String name = request.getParameter("name");
         String schoolCd = request.getParameter("schoolCd");
         String cd = request.getParameter("cd");
-        String name = request.getParameter("name");
 
         String jdbcURL = "jdbc:h2:tcp://localhost/~/school";
         String dbUser = "sa";
@@ -37,23 +36,27 @@ public class UpdateSubjectServlet extends HttpServlet {
             String currentCd = subjectDAO.getCurrentSubjectCode(oldSchoolCd, oldCd);
 
             if (currentCd != null && currentCd.equals(oldCd)) {
-                String updateQuery = "UPDATE SUBJECT SET SCHOOL_CD=?, CD=?, NAME=? WHERE SCHOOL_CD=? AND CD=? AND NAME=?";
-                PreparedStatement updateStatement = connection.prepareStatement(updateQuery);
-                updateStatement.setString(1, schoolCd);
-                updateStatement.setString(2, cd);
-                updateStatement.setString(3, name);
-                updateStatement.setString(4, oldSchoolCd);
-                updateStatement.setString(5, oldCd);
-                updateStatement.setString(6, oldName);
+                // 学校コードがnullでないことを確認し、nullの場合はエラーメッセージを送信する
+                if (schoolCd != null) {
+                    String updateQuery = "UPDATE SUBJECT SET SCHOOL_CD=?, CD=?, NAME=? WHERE SCHOOL_CD=? AND CD=?";
+                    PreparedStatement updateStatement = connection.prepareStatement(updateQuery);
+                    updateStatement.setString(1, schoolCd);
+                    updateStatement.setString(2, cd);
+                    updateStatement.setString(3, name);
+                    updateStatement.setString(4, oldSchoolCd);
+                    updateStatement.setString(5, oldCd);
 
-                int rowsUpdated = updateStatement.executeUpdate();
-                if (rowsUpdated > 0) {
-                    response.getWriter().println("科目が正常に更新されました！");
+                    int rowsUpdated = updateStatement.executeUpdate();
+                    if (rowsUpdated > 0) {
+                        response.getWriter().println("科目が正常に更新されました！");
+                    } else {
+                        response.getWriter().println("科目の更新に失敗しました！");
+                    }
+
+                    updateStatement.close();
                 } else {
-                    response.getWriter().println("科目の更新に失敗しました！");
+                    response.getWriter().println("エラー：学校コードが指定されていません！");
                 }
-
-                updateStatement.close();
             } else {
                 response.getWriter().println("対象の科目が見つかりませんでした！");
             }
