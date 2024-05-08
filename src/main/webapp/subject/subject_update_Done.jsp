@@ -10,7 +10,9 @@
 <body>
     <div class="container">
         <h1>変更が完了しました</h1>
-        <p><a href="subject_list.jsp">科目一覧に戻る</a></p>
+        <div class="back-link-container">
+            <a href="subject_list.jsp" class="back-link">科目一覧に戻る</a>
+        </div>
     </div>
 </body>
 </html>
