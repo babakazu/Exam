@@ -284,15 +284,11 @@ body {
     background-color: rgb(128, 255, 128); /* ホバー時に色を変える */
 }
 
-.container {
-    width: 100%;
-    max-width: 600px;
-    margin: auto;
-    text-align: center;
+.content {
+    margin-left: 250px; /* サイドバーの幅に応じて調整 */
     padding: 20px;
-    border: 1px solid #ccc;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
+
 
 .back-link-container {
     margin-top: 20px; /* メッセージとの間隔 */
@@ -373,4 +369,43 @@ body {
 /* リンクホバー時のスタイル */
 .menu-links a:hover {
     font-weight: bold; /* ホバー時に文字を太字に */
+}
+
+.search-form {
+    margin-top: 20px;
+    margin-left: calc((100% - 80%) / 2); /* リストの横幅の中央に揃える */
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: 80%; /* リストの横幅に合わせる */
+}
+
+
+.form-group {
+    display: inline-block; /* 横並びにする */
+    margin-right: 20px; /* 要素間の間隔 */
+}
+
+.label-large {
+    font-size: 16px; /* テキストのサイズを大きくする */
+}
+
+.list-title {
+    width: 80%; /* リストの横幅に合わせる */
+    margin-left: calc((100% - 80%) / 2); /* リストの横幅の中央に揃える */
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.search-results {
+    width: 80%; /* リストの横幅に合わせる */
+    margin-left: calc((100% - 80%) / 2); /* リストの横幅の中央に揃える */
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-top: 20px; /* 検索フォームの下に隙間を作る */
 }
