@@ -9,34 +9,44 @@
 <head>
     <meta charset="UTF-8">
     <title>学生一覧</title>
-
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
 </head>
 <body>
+    <div class="content">
+        <h3 class="list-title">学生一覧</h3>
 
-    <h3>学生一覧</h3>
-   
-
-    <div>
+<div class="search-form">   
         <form method="get" action="student_list.jsp">
+        <div class="form-group">
             <label for="entYear">入学年度:</label>
+            <br>
             <select id="entYear" name="entYear">
             <option value="2021">2021</option>
             <option value="2023">2022</option>
             <option value="2024">2023</option>
-            </select><br><br>
+            </select>
+            </div>
+            <div class="form-group class-number">
             <label for="classNum">クラス番号:</label>
+            <br>
             <select id="classNum" name="classNum">
             <option value="201">201</option>
             <option value="131">131</option>
             <option value="101">101</option>
-            </select><br><br> 
+            </select>
+            </div>
+            <div class="form-group">
             <label for="isAttend">在学中</label>
             <input type="checkbox" id="isAttend" name="isAttend" value="TRUE">
             <input type="hidden" name="isAttend" value="FALSE">
+            </div>
+            <div class="form-group">
             <input type="submit" value="絞込み">
+            </div>
         </form>
     </div>
     
+    <div class="search-results">
     <% 
         String entYear = request.getParameter("entYear");
         String classNum = request.getParameter("classNum");
@@ -75,6 +85,9 @@
 <% } %>
             </table>
         <% } %>
+        </div>
+        </div>
+        
         
 </body>
 </html>
