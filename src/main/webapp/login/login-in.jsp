@@ -12,6 +12,9 @@
         <p>password<input type="password" name="password"></p>
         <p><input type="checkbox" id="showPasswordCheckbox">パスワードを表示</p> <!-- チェックボックスを追加 -->
         <p><input type="submit" value="ログイン"></p>
+        <% if (request.getAttribute("errorMessage") != null) { %>
+            <p style="color: red;"><%= request.getAttribute("errorMessage") %></p>
+        <% } %>
     </form>
 
     <script>
@@ -26,4 +29,3 @@
         });
     </script>
 </body>
-

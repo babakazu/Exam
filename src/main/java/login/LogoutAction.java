@@ -1,4 +1,5 @@
-package login ;
+package login;
+
 import java.io.IOException;
 
 import jakarta.servlet.http.HttpServlet;
@@ -11,9 +12,7 @@ public class LogoutAction extends HttpServlet {
         HttpSession session = request.getSession(false);
         if (session != null) {
             session.invalidate();
-            response.sendRedirect("logout-out.jsp");
-        } else {
-            response.sendRedirect("logout-error.jsp");
         }
+        response.sendRedirect("logout-out.jsp");
     }
 }
