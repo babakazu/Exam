@@ -7,15 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <title>学生</title>
-    <style>
-        /* スタイルは省略 */
-        .message-box {
-            background-color: lightblue;
-            padding: 10px;
-            margin-bottom: 20px;
-        }
-    </style>
-</head>
+    </head>
 <body>
     <h2>成績管理</h2>
 

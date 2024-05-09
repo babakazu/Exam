@@ -2,34 +2,35 @@ package bean;
 
 public class Test {
     private String student_No;
-    private String subjectCd;
+    private String subject_Cd;
     private String school_Cd;
     private int no;
     private int point;
     private String class_Num;
+    private String ent_year;
 
     public String getStudent_No() {
         return student_No;
     }
 
-    public void setStudentNo(String studentNo) {
-        this.student_No = studentNo;
+    public void setStudent_No(String student_No) {
+        this.student_No = student_No;
     }
 
     public String getSubject_Cd() {
-        return subjectCd;
+        return subject_Cd;
     }
 
-    public void setSubject_Cd(String subjectCd) {
-        this.subjectCd = subjectCd;
+    public void setSubject_Cd(String subject_Cd) {
+        this.subject_Cd = subject_Cd;
     }
 
     public String getSchool_Cd() {
         return school_Cd;
     }
 
-    public void setSchool_Cd(String schoolCd) {
-        this.school_Cd = schoolCd;
+    public void setSchool_Cd(String school_Cd) {
+        this.school_Cd = school_Cd;
     }
 
     public int getNo() {
@@ -55,4 +56,12 @@ public class Test {
     public void setClass_Num(String class_Num) {
         this.class_Num = class_Num;
     }
+
+public String getEnt_year() {
+    return ent_year;
+}
+
+public void setEnt_year(String ent_year) {
+    this.ent_year = ent_year;
+}
 }

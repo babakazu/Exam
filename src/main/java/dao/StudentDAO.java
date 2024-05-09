@@ -149,5 +149,34 @@ public void insertStudent(String entYear, String no, String name, String classNu
         // エラー処理を追加する
     }
 }
+
+public Student getStudentByStudentNo(String studentNo) {
+    Student student = null;
+    String query = "SELECT NO, NAME, ENT_YEAR, CLASS_NUM, IS_ATTEND, SCHOOL_CD FROM student WHERE NO = ?";
+    try (Connection conn = ds.getConnection();
+         PreparedStatement ps = conn.prepareStatement(query)) {
+
+        ps.setString(1, studentNo);
+
+        try (ResultSet rs = ps.executeQuery()) {
+            if (rs.next()) {
+                student = new Student();
+                student.setNo(rs.getString("NO"));
+                student.setName(rs.getString("NAME"));
+                student.setEnt_year(rs.getString("ENT_YEAR"));
+                student.setClass_num(rs.getString("CLASS_NUM"));
+                student.setIs_attend(rs.getString("IS_ATTEND"));
+                student.setSchool_cd(rs.getString("SCHOOL_CD"));
+            }
+        }
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+
+    return student;
 }
+}
+
+
+
 

@@ -1,70 +1,91 @@
-<!-- search_grade.jsp -->
-
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@page contentType="text/html; charset=UTF-8" %>
+<%@ page import="bean.Test" %>
+<%@ page import="bean.Student" %>
+<%@ page import="dao.GradesDAO" %>
+<%@ page import="dao.StudentDAO" %>
+<%@page import="java.util.List"%>
 <%@ include file="../login/menu.jsp" %>
-<%@ page import="java.util.List" %>
-<%@ page import="java.util.Map" %>
 
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>成績検索</title>
+    <meta charset="UTF-8">
+    <title>成績管理</title>
 </head>
 <body>
-    <h2>成績検索</h2>
-    <form action="/grades/SearchGradeServlet" method="post"> <!-- 正しいサーブレットのパスを指定 -->
-        <label for="entYear">入学年度:</label>
-        <input type="text" id="entYear" name="entYear"><br><br>
-        
-        <label for="classNum">クラス:</label>
-        <input type="text" id="classNum" name="classNum"><br><br>
-        
-        <label for="subjectCd">科目:</label>
-        <input type="text" id="subjectCd" name="subjectCd"><br><br>
-        
-        <label for="count">回数:</label>
-        <input type="text" id="count" name="count"><br><br>
-        
-        <input type="submit" value="検索">
-    </form>
+
+    <h3>成績管理</h3>
+
+    <div>
+        <form method="get" action="search_grade.jsp">
+            <label for="entYear">入学年度:</label>
+            <select id="entYear" name="entYear">
+            <option value="2021">2021</option>
+            <option value="2023">2022</option>
+            <option value="2024">2023</option>
+            </select><br><br>
+            <label for="class_num">クラス番号:</label>
+            <select id="class_num" name="class_num">
+            <option value="201">201</option>
+            <option value="131">131</option>
+            <option value="101">101</option>
+            </select><br><br> 
+            <label for="subject_cd">科目</label>
+            <input type="text" id="subject_cd" name="subject_cd" required><br>
+            <label for="no">回数</label>
+            <input type="number" id="no" name="no" required><br>
+            <input type="submit" value="検索">
+        </form>
+    </div>
     
-    <hr>
-    
-    <h2>成績検索結果</h2>
-    <table border="1">
-        <tr>
-            <th>入学年度</th>
-            <th>クラス</th>
-            <th>学生番号</th>
-            <th>氏名</th>
-            <th>点数</th>
-        </tr>
-        <% 
-            List<Map<String, Object>> resultsList = (List<Map<String, Object>>) request.getAttribute("resultsList");
-            if (resultsList != null && !resultsList.isEmpty()) {
-                for (Map<String, Object> row : resultsList) {
-                    String entYear = (String) row.get("ENT_YEAR");
-                    String classNum = (String) row.get("CLASS_NUM");
-                    String no = (String) row.get("NO");
-                    String name = (String) row.get("NAME");
-                    String point = (String) row.get("POINT"); // 点数はString型として扱う
-        %>
-        <tr>
-            <td><%= entYear %></td>
-            <td><%= classNum %></td>
-            <td><%= no %></td>
-            <td><%= name %></td>
-            <td><%= point %></td>
-        </tr>
-        <% 
+    <% 
+    String studentNo = request.getParameter("student_no");
+    String classNum = request.getParameter("class_num");
+    String subjectCd = request.getParameter("subject_cd");
+    String no = request.getParameter("no");
+    List<Test> grades;
+    GradesDAO gradesDAO = new GradesDAO();
+    StudentDAO studentDAO = new StudentDAO(); // StudentDAOをインスタンス化
+    if ((studentNo != null && !studentNo.isEmpty()) || (classNum != null && !classNum.isEmpty()) || (subjectCd != null && !subjectCd.isEmpty()) || (no != null && !no.isEmpty())) {
+        grades = gradesDAO.searchGrades(studentNo, classNum, subjectCd, no);
+        if (!grades.isEmpty()) {
+            // 入学年度を取得してgradesにセットする
+            for (Test grade : grades) {
+                Student student = studentDAO.getStudentByStudentNo(grade.getStudent_No());
+                if (student != null) {
+                    grade.setEnt_year(student.getEnt_year()); // 入学年度を設定
                 }
-            } else {
-        %>
-        <tr>
-            <td colspan="5">検索結果はありません</td>
-        </tr>
-        <% } %>
-    </table>
+            }
+        }
+    } else {
+        grades = gradesDAO.getAllGrades();
+    }
+
+    if (grades.isEmpty()) { %>
+        <p>成績情報が存在しません</p>
+    <% } else { %>
+        <p>検索結果: <%= grades.size() %>件</p>
+        <table class="table-center" border="1">
+            <tr>
+                <th>入学年度</th>
+                <th>科目コード</th>
+                <th>学校コード</th>
+                <th>回数</th>
+                <th>得点</th>
+                <th>クラス番号</th>
+            </tr>
+            <% for (Test grade : grades) { %>
+                <tr>
+                    <td><%= grade.getEnt_year() %></td>
+                    <td><%= grade.getSubject_Cd() %></td>
+                    <td><%= grade.getSchool_Cd() %></td>
+                    <td><%= grade.getNo() %></td>
+                    <td><%= grade.getPoint() %></td>
+                    <td><%= grade.getClass_Num() %></td>
+                </tr>
+            <% } %>
+        </table>
+    <% } %>
+
 </body>
 </html>
