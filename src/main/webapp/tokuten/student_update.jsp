@@ -8,9 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <title>学生情報変更</title>
-    <style>
-        /* スタイルは省略 */
-    </style>
+
 </head>
 <body>
     <h2>学生情報変更</h2>

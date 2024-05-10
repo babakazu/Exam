@@ -2,7 +2,6 @@
 <%@ include file="../header.jsp" %>
 <link rel="stylesheet" type="text/css" href="../css/style.css">
 
-
 <div id="sidebar">
     <div class="menu-links">
         <a href="../login/menu.jsp">メニュー</a>
@@ -14,4 +13,3 @@
 </div>
 
 <%@ include file="../footer.jsp" %>
-
