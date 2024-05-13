@@ -11,7 +11,7 @@
 
 </head>
 <body>
-    <h2>学生情報変更</h2>
+    <h3 class="list-title">学生情報変更</h3>
 
     <div>
         <form method="post" action="/test/main/StudentUpdateServlet" onsubmit="return validateForm()">

@@ -58,3 +58,9 @@ input[type="checkbox"] {
     margin-right: 5px; /* 右側のマージン */
     vertical-align: middle; /* 上下中央揃え */
 }
+
+/* テキスト入力フィールドのフォーカス時のスタイル */
+input[type="text"]:focus, input[type="password"]:focus {
+    border-color: #007bff; /* フォーカス時のボーダー色 */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* フォーカス時の影 */
+}
