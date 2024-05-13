@@ -362,9 +362,18 @@ body {
 /* 各リンクのスタイル */
 .menu-links a {
     margin-bottom: 10px; /* 下に10pxのマージン */
-    color: #333; /* 文字色 */
+    color: blue; /* 文字色を青に変更 */
     text-decoration: none; /* 下線を消去 */
 }
+
+/* 非リンクテキストのスタイル */
+.menu-links p {
+    margin-bottom: 10px; /* 下に10pxのマージン */
+    margin-top: 0px; /* 上のマージンを0に設定 */
+    color: black; /* 文字色を黒に設定 */
+}
+
+
 
 /* リンクホバー時のスタイル */
 .menu-links a:hover {
@@ -410,3 +419,93 @@ body {
     margin-top: 20px; /* 検索フォームの下に隙間を作る */
 }
 
+.title-container {
+    /* 左右の幅を独立して操作できるようにする */
+    width: calc(100% - 500px); /* 右側の幅の設定 */
+    margin-left: 360px; /* 左側の幅の設定 */
+    margin-top: 15px; /* 上側の余白を作成 */
+    height: 60px; /* 高さ */
+    padding: 5px; /* 内側の余白 */
+    border: 1px solid #ccc; /* 枠線のスタイル */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 影の効果 */
+    display: flex; /* 中央配置のための flexbox */
+    justify-content: flex-start; /* 左端に寄せる */
+    align-items: center; /* 垂直方向の中央揃え */
+    background-color: #f9f9f9;
+}
+
+/* メニュー項目の枠のコンテナ設定 */
+.menu-container {
+    width: calc(100% - 490px); /* 右側の幅の設定 */
+    margin-left: 360px; /* 左側の幅の設定、適切な値に調整してください */
+    display: flex;
+    justify-content: space-between;
+    margin-right: 80px; /* 右側の余白 */
+    margin-top: 20px; /* 上側の余白 */
+}
+
+
+/* 各メニュー項目の枠 */
+.menu-item {
+    flex-grow: 1; /* 各アイテムが利用可能な空間を均等に使う */
+    margin-right: 10px; /* 枠同士の間隔 */
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* 最後のメニュー項目の右マージンを削除 */
+.menu-item:last-child {
+    margin-right: 0;
+}
+
+/* 成績管理の文字のスタイル */
+.menu-item p {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* リンクのスタイル */
+.menu-item a {
+    color: blue; /* 青色のリンク */
+    display: block;
+    margin-top: 5px;
+    text-decoration: none; /* 下線を消す */
+}
+
+.menu-item a:hover {
+    text-decoration: underline; /* ホバー時に下線を表示 */
+}
+
+.menu-item {
+    flex: 1; /* 各枠が均等な幅になるように設定 */
+    text-align: center; /* 文字を中央揃えに */
+    padding: 20px; /* 内側の余白 */
+    display: flex;
+    flex-direction: column; /* 子要素を縦に並べる */
+    justify-content: center; /* 縦方向の中央揃え */
+    align-items: center; /* 横方向の中央揃え */
+    color: blue; /* リンクのデフォルト色を青に */
+    font-size: larger; /* フォントサイズを大きくする */
+}
+
+.student-manage {
+    background-color: #ffcccc; /* 薄い赤色 */
+}
+
+.grade-manage {
+    background-color: #ccffcc; /* 薄い緑色 */
+}
+
+.subject-manage {
+    background-color: #e6e6fa; /* 薄い紫色 */
+}
+
+.grade-manage p {
+    color: black; /* 成績管理のテキストを黒に設定 */
+    margin: 0; /* 余計なマージンを削除 */
+}
+
+.grade-manage a {
+    color: blue; /* リンクを青色に設定 */
+}
