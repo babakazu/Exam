@@ -509,3 +509,33 @@ body {
 .grade-manage a {
     color: blue; /* リンクを青色に設定 */
 }
+
+.updata-form{
+	/* 左右の幅を独立して操作できるようにする */
+    width: calc(100% - 500px); /* 右側の幅の設定 */
+    margin-left: 360px; /* 左側の幅の設定 */
+    margin-top: 15px; /* 上側の余白を作成 */
+    height: 130px; /* 高さ */
+    padding: 5px; /* 内側の余白 */
+    border: 1px solid #ccc; /* 枠線のスタイル */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 影の効果 */
+    display: flex; /* 中央配置のための flexbox */
+    justify-content: flex-start; /* 左端に寄せる */
+    align-items: center; /* 垂直方向の中央揃え */
+    background-color: #f9f9f9;
+}
+.back-button {
+    display: inline-block; /* インラインブロック要素に変更 */
+    margin-top: 20px; /* 上側の余白を作成 */
+    margin-left: 360px; /* 左側の幅の設定 */
+    padding: 8px 13px; /* ボタンの余白 */
+    background-color: #007bff; /* ボタンの背景色 */
+    border: 1px solid #007bff; /* 枠線のスタイル */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 影の効果 */
+    border-radius: 5px; /* ボタンの角を丸くする */
+}
+
+.back-button a {
+    text-decoration: none; /* 下線を消す */
+    color: white; /* 文字色を白に設定 */
+}

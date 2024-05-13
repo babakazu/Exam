@@ -11,9 +11,11 @@
 
 </head>
 <body>
-    <h3 class="list-title">学生情報変更</h3>
+    <div class="title-container">
+    <h3>学生情報変更</h3>
+</div>
 
-    <div>
+    <div class="updata-form"> 
         <form method="post" action="/test/main/StudentUpdateServlet" onsubmit="return validateForm()">
             <input type="hidden" name="no" value="<%= request.getParameter("no") %>">
             <input type="hidden" name="entYear" value="<%= request.getParameter("entYear") %>">
@@ -34,7 +36,9 @@
     </div>
     
     
-   <a href="student_list.jsp">戻る</a>
+   <div class="back-button">
+    <a href="student_list.jsp">戻る</a>
+</div>
 
     <script>
         document.getElementById("noLabel").textContent = "<%= request.getParameter("no") %>";
