@@ -6,26 +6,31 @@
     <link rel="stylesheet" type="text/css" href="../css/login-style.css"> <!-- CSSファイルのリンク -->
 </head>
 <body>
-    <div class="login-title"></div> <!-- タイトルを追加 -->
-    <form action="Login.action" method="post">
-        <p>ID<input type="text" name="login"></p>
-        <p>password<input type="password" name="password"></p>
-        <p><input type="checkbox" id="showPasswordCheckbox">パスワードを表示</p> <!-- チェックボックスを追加 -->
-        <p><input type="submit" value="ログイン"></p>
-        <% if (request.getAttribute("errorMessage") != null) { %>
-            <p style="color: red;"><%= request.getAttribute("errorMessage") %></p>
-        <% } %>
-    </form>
+    <div class="login-title"> <!-- ログインタイトルのコンテナ -->
+        <h1>ログイン</h1> <!-- ログインタイトル -->
+    </div>
+    <div class="login-container"> <!-- ログイン枠のコンテナ -->
+        <form action="Login.action" method="post">
+            <p>ID<input type="text" name="login"></p>
+            <p>password<input type="password" name="password"></p>
+            <p><input type="checkbox" id="showPasswordCheckbox">パスワードを表示</p> <!-- チェックボックスを追加 -->
+            <p><input type="submit" value="ログイン"></p>
+            <% if (request.getAttribute("errorMessage") != null) { %>
+                <p style="color: red;"><%= request.getAttribute("errorMessage") %></p>
+            <% } %>
+        </form>
 
-    <script>
-        // チェックボックスがクリックされたときにパスワードを表示する
-        document.getElementById('showPasswordCheckbox').addEventListener('click', function() {
-            var passwordInput = document.querySelector('input[name="password"]');
-            if (passwordInput.type === 'password') {
-                passwordInput.type = 'text';
-            } else {
-                passwordInput.type = 'password';
-            }
-        });
-    </script>
+        <script>
+            // チェックボックスがクリックされたときにパスワードを表示する
+            document.getElementById('showPasswordCheckbox').addEventListener('click', function() {
+                var passwordInput = document.querySelector('input[name="password"]');
+                if (passwordInput.type === 'password') {
+                    passwordInput.type = 'text';
+                } else {
+                    passwordInput.type = 'password';
+                }
+            });
+        </script>
+    </div>
 </body>
+</html>
