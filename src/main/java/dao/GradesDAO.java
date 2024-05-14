@@ -49,7 +49,7 @@ public class GradesDAO {
     }
 
 
-    public List<Test> searchGrades(String student_No, String class_Num, String subject_No, String no) {
+    public List<Test> searchGrades(String student_No, String class_Num, String subject_No, String no, String entYear) {
         List<Test> grades = new ArrayList<>();
         String query = "SELECT STUDENT_NO, SUBJECT_CD, SCHOOL_CD, NO, POINT, CLASS_NUM FROM TEST WHERE ";
         List<String> conditions = new ArrayList<>();
@@ -112,38 +112,26 @@ public class GradesDAO {
     }
 
     
-    
-public void updateStudent(String studentNo, String entYear, String name, String classNum, String isAttend) {
-    String query = "UPDATE TEST SET NAME = ?, CLASS_NUM = ?, IS_ATTEND = ? WHERE STUDENT_NO = ? AND ENT_YEAR = ?";
-    try (Connection conn = ds.getConnection();
-         PreparedStatement ps = conn.prepareStatement(query)) {
+    public void updateGrade(String student_No, String class_Num, String subject_No, String no, int point) {
+        String query = "UPDATE TEST SET POINT = ? WHERE STUDENT_NO = ? AND CLASS_NUM = ? AND SUBJECT_CD = ? AND NO = ?";
+        
+        try (Connection conn = ds.getConnection();
+             PreparedStatement ps = conn.prepareStatement(query)) {
+            ps.setInt(1, point);
+            ps.setString(2, student_No);
+            ps.setString(3, class_Num);
+            ps.setString(4, subject_No);
+            ps.setString(5, no);
+            
+            ps.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+            // エラー処理を追加する
+        }
+    }}
 
-        ps.setString(1, name);
-        ps.setString(2, classNum);
-        ps.setString(3, isAttend);
-        ps.setString(4, studentNo);
-        ps.setString(5, entYear);
 
-        ps.executeUpdate();
-    } catch (Exception e) {
-        e.printStackTrace();
-    }
-}
 
-public void insertStudent(String entYear, String studentNo, String name, String classNum) {
-    try (Connection conn = ds.getConnection();
-         PreparedStatement ps = conn.prepareStatement("INSERT INTO TEST (ENT_YEAR, STUDENT_NO, NAME, CLASS_NUM) VALUES (?, ?, ?, ?)")) {
-        ps.setString(1, entYear);
-        ps.setString(2, studentNo);
-        ps.setString(3, name);
-        ps.setString(4, classNum);
-        ps.executeUpdate();
-    } catch (Exception e) {
-        e.printStackTrace();
-        // エラー処理を追加する
-    }
-}
-}
 
 
 

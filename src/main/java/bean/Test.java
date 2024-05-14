@@ -8,6 +8,7 @@ public class Test {
     private int point;
     private String class_Num;
     private String ent_year;
+    private String name;
 
     public String getStudent_No() {
         return student_No;
@@ -63,5 +64,18 @@ public String getEnt_year() {
 
 public void setEnt_year(String ent_year) {
     this.ent_year = ent_year;
+}
+public void setNo(String no) {
+    this.no = Integer.parseInt(no); // Stringをintに変換して設定
+}
+
+// 既存のメソッドと同じ名前だが引数が異なる新しいメソッドを追加
+public void setName(String name) {
+    this.name = name;
+}
+
+// 既存のメソッドと同じ名前だが引数が異なる新しいメソッドを追加
+public String getName() {
+    return name;
 }
 }
