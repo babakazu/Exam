@@ -346,6 +346,7 @@ body {
 #sidebar {
     width: 200px; /* サイドバーの幅 */
     position: absolute; /* 絶対位置指定 */
+    height: 400px; /* 高さ */
     top: 80px; /* ヘッダーの下に配置するための上マージン */
     left: calc((100% - 80%) / 2 + 20px); /* ヘッダーの左端に合わせて左位置を計算 */
     background-color: #f9f9f9; /* サイドバーの背景色 */
@@ -538,4 +539,29 @@ body {
 .back-button a {
     text-decoration: none; /* 下線を消す */
     color: white; /* 文字色を白に設定 */
+}
+
+.back-button2 {
+    display: inline-block; /* インラインブロック要素に変更 */
+    margin-top: 20px; /* 上側の余白を作成 */
+    margin-left: 95px; /* 左側の幅の設定 */
+    padding: 8px 13px; /* ボタンの余白 */
+    background-color: #007bff; /* ボタンの背景色 */
+    border: 1px solid #007bff; /* 枠線のスタイル */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 影の効果 */
+    border-radius: 5px; /* ボタンの角を丸くする */
+}
+
+.back-button2 a {
+    text-decoration: none; /* 下線を消す */
+    color: white; /* 文字色を白に設定 */
+}
+
+.shinki{
+	margin-left: 800px; /* 左側の幅の設定 */
+}
+
+.shinki a{
+	text-decoration: none; /* 下線を消す */
+    color: blue; /* 文字色を白に設定 */
 }

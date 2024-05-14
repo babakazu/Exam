@@ -14,6 +14,11 @@
 <body>
     <div class="content">
         <h3 class="list-title">学生一覧</h3>
+        
+        <div class="shinki">
+        <a href="student_insert.jsp">新規登録</a>
+        </div>
+        
 
 <div class="search-form">   
         <form method="get" action="student_list.jsp">

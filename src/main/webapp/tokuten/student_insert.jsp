@@ -9,17 +9,20 @@
     <title>学生登録フォーム</title>
 </head>
 <body>
-    <h2>学生登録フォーム</h2>
+    <div class="content">
+        <h3 class="list-title">学生登録フォーム</h3>
+        <div class="search-form">
     <form method="post" action="/test/main/Student_Insert">
-        <label for="ent_year">入学年度:</label>
+        <label for="ent_year">入学年度:</label><br>
         <input type="number" id="ent_year" name="ent_year" required><br>
-        <label for="no">学籍番号:</label>
+        <label for="no">学籍番号:</label><br>
         <input type="text" id="no" name="no" required><br>
-        <label for="name">氏名:</label>
+        <label for="name">氏名:</label><br>
         <input type="text" id="name" name="name" required><br>
-        <label for="class_num">クラス:</label>
-        <input type="text" id="class_num" name="class_num" required><br>
-        <input type="submit" value="登録">
+        <label for="class_num">クラス:</label><br>
+        <input type="text" id="class_num" name="class_num" required><br><br>
+        
+        <input type="submit" value="登録"><br><br>
         <input type="button" value="戻る" onclick="location.href='student_list.jsp'">
     </form>
     
@@ -34,6 +37,9 @@
             studentDAO.insertStudent(no , name , ent_year ,class_num );
         }
     %>
+  
+    </div>
+    </div>
 </body>
 </html>
 
