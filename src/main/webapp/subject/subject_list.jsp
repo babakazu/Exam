@@ -4,19 +4,20 @@
 <%@ include file="../login/menu.jsp" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
-
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>科目一覧</title>
-<link rel="stylesheet" type="text/css" href="../css/style.css">
-<link rel="stylesheet" type="text/css" href="../css/subject-list.css">
 </head>
 <body>
-    <div class="subject-list-container">
-        <h1>科目管理</h1>
-        <a href="subject_insert.jsp" class="new-subject-link">新規登録</a>
+    <div class="content">
+        <h3 class="list-title">科目管理</h3>
+        </div>
+        <div class="shinki2">
+        <a href="subject_insert.jsp">新規登録</a>
+        </div>
+        <div class="search-form2">
         <table class="subject-list-table">
             <tr>
                 <th>科目コード</th>

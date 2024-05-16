@@ -14,9 +14,10 @@
 </head>
 <body>
 
-    <h3>成績管理</h3>
+    <div class="content">
+        <h3 class="list-title">成績管理</h3>
 
-    <div>
+    <div class="search-results">
         <form method="get" action="test_list.jsp">
             <label for="entYear">入学年度:</label>
             <select id="entYear" name="entYear">
@@ -36,9 +37,11 @@
         </form>
     </div>
     
-    <h3>学生情報</h3>
+    <div class="content">
+        <h3 class="list-title">学生情報</h3>
+       </div>
     
-    <div>
+    <div class="search-results">
     <form method="get" action="test_list.jsp">
         <label for="No">学生番号</label>
         <input type="text" id="studentNo" name="studentNo" required><br>
@@ -92,6 +95,6 @@
             <% } %>
         </table>
     <% } %>
-
+</div>
 </body>
 </html>

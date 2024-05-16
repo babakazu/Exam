@@ -11,9 +11,10 @@
 </head>
 <body>
 
-    <h3>成績管理</h3>
+    <div class="content">
+        <h3 class="list-title">成績管理</h3>
 
-    <div>
+    <div class="search-form"> 
         <form method="get" action="search_grade.jsp">
             <label for="entYear">入学年度:</label>
             <select id="entYear" name="entYear">
@@ -64,12 +65,17 @@
     <p>成績情報が存在しません</p>
     <% } else { %>
     <form method="post" action="/test/main/UpdateGradesServlet">
-        <input type="submit" value="登録">
+    </form>
+    <div class="back-button2">
+        <a href = "grades_succes.jsp">登録</a>
+        </div>
+        <div class="search results">
         <p>
             <% if (subjectCd != null && !subjectCd.isEmpty()) { %>
             科目: <%= subjectCd %>（<%= no %>回）
             <% } %>
         </p>
+        </div>
         <table class="table-center" border="1">
             <tr>
                 <th>入学年度</th>
@@ -91,5 +97,6 @@
     </form>
     <% } %>
 
+</div>
 </body>
 </html>
