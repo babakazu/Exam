@@ -38,7 +38,7 @@
     </div>
     
     <div class="content">
-        <h3 class="list-title">学生情報</h3>
+        <h3 class="list-title2">学生情報</h3>
        </div>
     
     <div class="search-results">

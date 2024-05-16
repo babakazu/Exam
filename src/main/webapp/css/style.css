@@ -592,22 +592,6 @@ body {
     color: white; /* 文字色を白に設定 */
 }
 
-.search results {
-    display: inline-block; /* インラインブロック要素に変更 */
-    margin-top: 20px; /* 上側の余白を作成 */
-    margin-left: 365px; /* 左側の幅の設定 */
-    padding: 8px 13px; /* ボタンの余白 */
-    background-color: #007bff; /* ボタンの背景色 */
-    border: 1px solid #007bff; /* 枠線のスタイル */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 影の効果 */
-    border-radius: 5px; /* ボタンの角を丸くする */
-}
-
-.search results a {
-    text-decoration: none; /* 下線を消す */
-    color: white; /* 文字色を白に設定 */
-}
-
 .shinki2{
 	margin-left: 1070px; /* 左側の幅の設定 */
 }
@@ -615,4 +599,33 @@ body {
 .shinki2 a{
 	text-decoration: none; /* 下線を消す */
     color: blue; /* 文字色を白に設定 */
+}
+
+.list-title2 {
+     /* 左右の幅を独立して操作できるようにする */
+    width: calc(100% - -140px); /* 右側の幅の設定 */
+    margin-left: -175px; /* 左側の幅の設定 */
+    margin-top: 3px; /* 上側の余白を作成 */
+    height: 40px; /* 高さ */
+    padding: 5px; /* 内側の余白 */
+    border: 1px solid #ccc; /* 枠線のスタイル */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 影の効果 */
+    display: flex; /* 中央配置のための flexbox */
+    justify-content: flex-start; /* 左端に寄せる */
+    align-items: center; /* 垂直方向の中央揃え */
+    background-color: #f9f9f9;
+}
+
+.search-results2 {
+    width: calc(100% - -140px); /* 右側の幅の設定 */
+    margin-left: -175px; /* 左側の幅の設定 */
+    margin-top: 3px; /* 上側の余白を作成 */
+    height: 40px; /* 高さ */
+    padding: 5px; /* 内側の余白 */
+    border: 1px solid #ccc; /* 枠線のスタイル */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 影の効果 */
+    display: flex; /* 中央配置のための flexbox */
+    justify-content: flex-start; /* 左端に寄せる */
+    align-items: center; /* 垂直方向の中央揃え */
+    background-color: #f9f9f9;
 }

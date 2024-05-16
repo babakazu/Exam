@@ -1,6 +1,6 @@
 <%@ page import="dao.SubjectDAO" %>
 <%@ page import="bean.Subject" %>
-<%@ include file="../header.jsp" %>
+<%@ include file="../login/menu.jsp" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -10,7 +10,10 @@
 </head>
 <body>
 	
-    <h1>科目追加</h1>
+    <div class="content">
+        <h3 class="list-title">科目追加</h3>
+        </div>
+        <div class="search-form2">
     <form method="post" action="subject_insert.jsp">
         学校コード: <input type="text" name="schoolCode"><br>
         科目コード: <input type="text" name="code"><br>
@@ -28,6 +31,7 @@
             out.println("Subject inserted successfully.");
         }
     %>
+    </div>
+    
 </body>
 </html>
-<%@ include file="../footer.jsp" %>

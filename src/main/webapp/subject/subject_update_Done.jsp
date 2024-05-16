@@ -8,10 +8,11 @@
     <link rel="stylesheet" type="text/css" href="../css/style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>変更が完了しました</h1>
-        <div class="back-link-container">
-            <a href="subject_list.jsp" class="back-link">科目一覧に戻る</a>
+        <div class="content">
+        <h3 class="list-title">変更が完了しました</h3>
+        </div>
+        <div class="back-button3">
+            <a href="subject_list.jsp">科目一覧に戻る</a>
         </div>
     </div>
 </body>
