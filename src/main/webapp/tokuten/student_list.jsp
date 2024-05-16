@@ -14,13 +14,14 @@
 <body>
     <div class="content">
         <h3 class="list-title">学生一覧</h3>
+        </div>
         
         <div class="shinki">
         <a href="student_insert.jsp">新規登録</a>
         </div>
         
 
-<div class="search-form">   
+<div class="search-form2">   
         <form method="get" action="student_list.jsp">
         <div class="form-group">
             <label for="entYear">入学年度:</label>
@@ -51,7 +52,7 @@
         </form>
     </div>
     
-    <div class="search-results">
+   <div class="search-form2">
     <% 
         String entYear = request.getParameter("entYear");
         String classNum = request.getParameter("classNum");
