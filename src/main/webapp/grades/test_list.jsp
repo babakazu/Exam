@@ -41,7 +41,7 @@
         <h3 class="list-title2">学生情報</h3>
        </div>
     
-    <div class="search-results">
+    <div class="search-results2">
     <form method="get" action="test_list.jsp">
         <label for="No">学生番号</label>
         <input type="text" id="studentNo" name="studentNo" required><br>
