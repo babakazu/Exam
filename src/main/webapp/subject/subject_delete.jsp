@@ -1,5 +1,5 @@
 <%@ page import="dao.SubjectDAO" %>
-<%@ include file="../header.jsp" %>
+<%@ include file="../login/menu.jsp" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -8,7 +8,9 @@
     <title>科目削除</title>
 </head>
 <body>
-    <h1>科目削除</h1>
+    <div class="content">
+        <h3 class="list-title">科目削除</h3>
+        </div>
     <%
         String schoolCode = request.getParameter("schoolCd");
         String code = request.getParameter("code");
@@ -16,6 +18,7 @@
         
         if (request.getParameter("confirm") == null) {
     %>
+    <div class="search-form2"> 
             <p>科目 <%= name %> を削除します。本当によろしいですか？</p>
             <form method="post" action="subject_delete.jsp">
                 <input type="hidden" name="schoolCd" value="<%= schoolCode %>">
@@ -23,8 +26,12 @@
                 <input type="hidden" name="name" value="<%= name %>">
                 <input type="hidden" name="confirm" value="true">
                 <input type="submit" value="削除">
-                <a href="subject_list.jsp">戻る</a>
             </form>
+            </div>
+            
+            <div class="back-button3">
+            <a href="subject_list.jsp">戻る</a>
+            </div>
     <%
         } else {
             SubjectDAO subjectDAO = new SubjectDAO();
@@ -35,6 +42,7 @@
     <%
         }
     %>
+    </div>
 </body>
 </html>
-<%@ include file="../footer.jsp" %>
+
