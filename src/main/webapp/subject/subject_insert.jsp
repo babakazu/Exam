@@ -32,6 +32,9 @@
         }
     %>
     </div>
+                <div class="back-button3">
+            <a href="subject_list.jsp">戻る</a>
+            </div>
     
 </body>
 </html>
