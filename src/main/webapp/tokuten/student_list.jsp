@@ -27,8 +27,8 @@
             <br>
             <select id="entYear" name="entYear">
             <option value="2021">2021</option>
-            <option value="2023">2022</option>
-            <option value="2024">2023</option>
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
             </select>
             </div>
             <div class="form-group class-number">
@@ -70,21 +70,19 @@
         <p>検索結果: <%= students.size() %>件</p>
             <table class="table-center" border="1">
                 <tr>
+                    <th>入学年度</th>
                     <th>学生番号</th>
                     <th>名前</th>
-                    <th>入学年度</th>
                     <th>クラス番号</th>
-                    <th>出席状況</th>
-                    <th>学校コード</th>
+                    <th>在学中</th>
                 </tr>
                 <% for (Student student : students) { %>
     <tr>
+        <td><%= student.getEnt_year() %></td>
         <td><%= student.getNo() %></td>
         <td><%= student.getName() %></td>
-        <td><%= student.getEnt_year() %></td>
         <td><%= student.getClass_num() %></td>
         <td><%= student.getIs_attend().equals("TRUE") ? "〇" : "×" %></td>
-        <td><%= student.getSchool_cd() %></td>
         <td><a href="student_update.jsp?no=<%= student.getNo() %>&entYear=<%= student.getEnt_year() %>">変更</a></td>
     </tr>
 <% } %>

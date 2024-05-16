@@ -629,3 +629,49 @@ body {
     align-items: center; /* 垂直方向の中央揃え */
     background-color: #f9f9f9;
 }
+
+
+.title-box {
+     width: calc(100% - 520px); /* 右側の幅の設定 */
+    margin-left: 380px; /* 左側の幅の設定 */
+    margin-top: 15px; /* 上側の余白を作成 */
+    height: 60px; /* 高さ */
+    padding: 5px; /* 内側の余白 */
+    border: 1px solid #ccc; /* 枠線のスタイル */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 影の効果 */
+    display: flex; /* 中央配置のための flexbox */
+    justify-content: flex-start; /* 左端に寄せる */
+    align-items: center; /* 垂直方向の中央揃え */
+    background-color: #f9f9f9;
+}
+
+.form-container {
+	  width: calc(100% - 520px); /* 右側の幅の設定 */
+    margin-left: 380px; /* 左側の幅の設定 */
+    margin-top: 15px; /* 上側の余白を作成 */
+    height: 180px; /* 高さ */
+    padding: 5px; /* 内側の余白 */
+    border: 1px solid #ccc; /* 枠線のスタイル */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 影の効果 */
+    display: flex; /* 中央配置のための flexbox */
+    justify-content: flex-start; /* 左端に寄せる */
+    align-items: center; /* 垂直方向の中央揃え */
+    background-color: #f9f9f9;
+}
+
+.form-container {
+    margin-top: 35px; /* Add some margin to the top */
+}
+.button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px; /* 角丸 */
+    background-color: #007bff; /* 背景色を青に */
+    color: white; /* 文字色を白に */
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #0056b3; /* ホバー時の背景色を変更 */
+}
