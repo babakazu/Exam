@@ -592,11 +592,11 @@ body {
     color: white; /* 文字色を白に設定 */
 }
 
-.shinki2{
+.shinki{
 	margin-left: 1070px; /* 左側の幅の設定 */
 }
 
-.shinki2 a{
+.shinki a{
 	text-decoration: none; /* 下線を消す */
     color: blue; /* 文字色を白に設定 */
 }
@@ -674,4 +674,14 @@ body {
 
 .button:hover {
     background-color: #0056b3; /* ホバー時の背景色を変更 */
+}
+
+.shinki2{
+	margin-top: 20px; /* 上側の余白を作成 */
+	margin-left:365px; /* 左側の幅の設定 */
+}
+
+.shinki2 a{
+	text-decoration: none; /* 下線を消す */
+    color: blue; /* 文字色を白に設定 */
 }

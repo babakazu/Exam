@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="content">
-        <h3 class="list-title">科目削除</h3>
+        <h3 class="list-title">科目情報削除</h3>
         </div>
     <%
         String schoolCode = request.getParameter("schoolCd");
@@ -37,8 +37,12 @@
             SubjectDAO subjectDAO = new SubjectDAO();
             subjectDAO.deleteSubject(schoolCode, code);
     %>
+        <div class="search-form2">
             <p>科目 <%= name %> を削除しました。</p>
-            <a href="subject_list.jsp">戻る</a>
+            </div>
+         <div class="shinki2">
+            <a href="subject_list.jsp">科目一覧</a>
+            </div>
     <%
         }
     %>

@@ -14,7 +14,7 @@
     <div class="content">
         <h3 class="list-title">科目管理</h3>
         </div>
-        <div class="shinki2">
+        <div class="shinki">
         <a href="subject_insert.jsp">新規登録</a>
         </div>
         <div class="search-form2">

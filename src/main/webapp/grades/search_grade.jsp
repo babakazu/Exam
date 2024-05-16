@@ -69,7 +69,7 @@
     <div class="back-button2">
         <a href = "grades_succes.jsp">登録</a>
         </div>
-        <div class="search results">
+        <div class="search-results">
         <p>
             <% if (subjectCd != null && !subjectCd.isEmpty()) { %>
             科目: <%= subjectCd %>（<%= no %>回）
