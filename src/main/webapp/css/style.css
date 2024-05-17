@@ -705,3 +705,32 @@ body {
 .back a{
     color: blue; /* 文字色を白に設定 */
 }
+
+.list-title10 {
+    width: calc(100% - 150px); /* 右側の幅の設定 */
+    margin-left: -30px; /* 左側の幅の設定 */
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.list-title90 {
+    width: calc(100% - 150px); /* 右側の幅の設定 */
+    margin-left: -30px; /* 左側の幅の設定 */
+    margin-top: -30px; /* 上側の余白を作成 */
+    display: block; /* ブロック要素として表示 */
+    padding: 10px;
+    text-align: center; /* 中央揃え */
+    background-color: rgb(0, 255, 128); /* 背景色 */
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.back2{
+	margin-left: 240px; /* 左側の幅の設定 */
+}
+
+.back2 a{
+    color: blue; /* 文字色を白に設定 */
+}
