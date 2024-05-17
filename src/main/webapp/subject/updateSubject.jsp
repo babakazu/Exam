@@ -31,7 +31,7 @@
             <input type="submit" value="変更" class="button">
             <br>
             <br>
-            <a href = "subbject_list.jsp">戻る</a>
+            <a href = "subject_list.jsp">戻る</a>
         </form>
     </div>
 </body>

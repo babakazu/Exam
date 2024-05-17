@@ -685,3 +685,23 @@ body {
 	text-decoration: none; /* 下線を消す */
     color: blue; /* 文字色を白に設定 */
 }
+
+.list-title9 {
+    width: 80%; /* リストの横幅に合わせる */
+    margin-top: -40px; /* 上側の余白を作成 */
+    display: block; /* ブロック要素として表示 */
+    margin-left: calc((100% - 80%) / 2); /* リストの横幅の中央に揃える */
+    padding: 10px;
+    text-align: center; /* 中央揃え */
+    background-color: rgb(0, 255, 128); /* 背景色 */
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.back{
+	margin-left: 370px; /* 左側の幅の設定 */
+}
+
+.back a{
+    color: blue; /* 文字色を白に設定 */
+}
