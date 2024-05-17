@@ -28,7 +28,7 @@
             SubjectDAO subjectDAO = new SubjectDAO();
             Subject subject = new Subject(schoolCode, code, name);
             subjectDAO.insertSubject(subject);
-            out.println("Subject inserted successfully.");
+            out.println("正常に登録されました");
         }
     %>
     </div>
